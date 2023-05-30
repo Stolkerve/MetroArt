@@ -1,4 +1,4 @@
-import { Fade, Slide, Zoom } from "react-awesome-reveal";
+import { Fade, Zoom } from "react-awesome-reveal";
 import campusBackground from "../assets/campus.jpg";
 import { useEffect, useState } from "react";
 import { LineWave } from "react-loader-spinner";
