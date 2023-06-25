@@ -23,3 +23,18 @@ body {
     box-shadow: 5px 5px 0px 0px white;
     transform: scale(99%);
 }
+
+@layer base {
+    .inputContainer {
+        @apply pl-28 w-full;
+      }
+
+    .inputLabel {
+        @apply block text-white font-semibold text-sm pb-2;
+    }
+  
+    input {
+        @apply block text-black border-[#F77F00] border-2 rounded w-4/5 h-10;
+        
+    } 
+}

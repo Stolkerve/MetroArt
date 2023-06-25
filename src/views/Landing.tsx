@@ -2,12 +2,23 @@ import { Fade, Zoom } from "react-awesome-reveal";
 import campusBackground from "../assets/campus.jpg";
 import { useEffect, useState } from "react";
 import { LineWave } from "react-loader-spinner";
+import { useNavigate } from "react-router-dom";
+import { loginURL, registerURL } from "../constants/urls";
 
 export default function landing() {
   const [loading, setLoading] = useState(true)
+  const navigate = useNavigate();
 
   useEffect(() => {
   }, [])
+
+  const handleLoginButton = () => {
+    navigate(loginURL);
+  }
+
+  const handleRegisterButton = () => {
+    navigate(registerURL);
+  }
 
   function setTimer(a: any) {
     if (a) {
@@ -49,8 +60,8 @@ export default function landing() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
             <div className="flex flex-col items-center text-white border-collapse font-semibold">
-              <button className="w-40 p-4 bg-[#F77F00] rounded-t-lg border-x-2 border-t-2 border-b-2 border-[#1D3557] transition duration-200 hover:bg-[#ff890a]">Iniciar session</button>
-              <button className="w-40 p-4 bg-[#F77F00] rounded-b-lg border-x-2 border-b-2 border-[#1D3557] hover:bg-[#ff890a]">Login</button>
+              <button className="w-40 p-4 bg-[#F77F00] rounded-t-lg border-x-2 border-t-2 border-b-2 border-[#1D3557] transition duration-200 hover:bg-[#ff890a]" onClick={handleRegisterButton}>Registrarse</button>
+              <button className="w-40 p-4 bg-[#F77F00] rounded-b-lg border-x-2 border-b-2 border-[#1D3557] hover:bg-[#ff890a]" onClick={handleLoginButton}>Iniciar Sesión</button>
             </div>
 
           </div>
@@ -68,7 +79,7 @@ export default function landing() {
           >
             <div className="max-w-md space-y-4">
               <div className="flex w-full justify-center items-center">
-                <h1 className="p-4 rounded-lg text-xl font-bold text-white bg-[#1D3557]">Nuestro Mision</h1>
+                <h1 className="p-4 rounded-lg text-xl font-bold text-white bg-[#1D3557]">Nuestra Misión</h1>
               </div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
