@@ -6,6 +6,8 @@ import {
   emailPasswordLogin,
   googleLogin,
  } from "../../firebase/auth-service";
+ import campusBackground from "../../assets/campus.jpg";
+
 
 export function Login() {
   const navigate = useNavigate();
@@ -41,52 +43,62 @@ export function Login() {
   };
   
     return (
-      <div className="container flex flex-row">
-        <form className={styles.form} onSubmit={onSubmit}>
-          <h1 className={styles.title}>Reserve from anywhere</h1>
-          <p className={styles.welcomeTxt}>
-            Log in to make a reservation
-          </p>
+<div className="container flex flex-row justify-center items-center w-screen   h-screen">
+      <img src={campusBackground} className="w-1/2 h-full" />
+      <form className="w-1/2 h-full bg-[#1D3557] grid grid-cols-1 p-6 place-items-center items-center">
+        <h1 className="text-4xl font-bold p-0">Inicio de sesión</h1>
+        <p className="text-white mb-2 text-lg">
+          Inicia sesión para acceder 
+        </p>
+
   
-          {/*Email*/}
-          <div className={styles.inputContainer}>
-            <label htmlFor="email">
-              <span>Email</span>
-            </label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Eg. sorrentino@gmail.com"
-              onChange={onChange}
-            />
-          </div>
+             {/*Email*/}
+             <div className="inputContainer">
+          <label className="inputLabel" htmlFor="email">
+            <span>Email</span>
+          </label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Ingresa tu email"
+          />
+        </div>
   
           {/*Password*/}
-          <div className={styles.inputContainer}>
-            <label htmlFor="password">
-              <span>Password</span>
-            </label>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="********"
-              onChange={onChange}
-            />
-          </div>
+          <div className="inputContainer">
+          <label className="inputLabel" htmlFor="password">
+            <span>Contraseña</span>
+          </label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Ingresa tu contraseña"
+          />
+        </div>
   
-          <button type="submit" className={styles.submitBtn}>
-            LOG IN
-          </button>
-  
-          <button
-            type="button"
-            className={styles.googleBtn}
-            onClick={handleGoogleClick}
+        <button
+            type="submit"
+            className= "bg-[#F77F00] w-4/5 mt-6 h-10 rounded-lg font-bold"
           >
-            LOG IN WITH GOOGLE
+            Iniciar sesión
           </button>
+          <button
+              type="button"
+              className="border-2 border-white rounded p-4 font-semibold w-1/3 mt-2"
+              onClick={handleGoogleClick}
+            >
+              Google
+            </button>
+            
+            <button
+              type="button"
+              className="border-2 border-white rounded p-4 font-semibold w-1/3 mt-2"
+              onClick={handleGoogleClick}
+            >
+              Facebook
+            </button>
   
           <Link to={registerURL} className={styles.loginRedirect}>
             No account?{" "}

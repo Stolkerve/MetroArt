@@ -144,18 +144,18 @@ export function Register() {
             >
               Google
             </button>
-            <button
-              type="button"
-              className="border-2 border-white rounded p-4 font-semibold w-1/3 mt-2"
-              onClick={handleGoogleClick}
-            >
-              Facebook
-            </button>
+              <button
+                type="button"
+                className="border-2 border-white rounded p-4 font-semibold w-1/3 mt-2"
+                onClick={handleGoogleClick}
+              >
+                Facebook
+              </button>
           </div>
           
           <Link to={loginURL} className="mt-4">
-            ¿No tienes una cuenta?{" "}
-            <span className="underline font-semibold">Regístrate</span>
+            Ya tienes una cuenta?{" "}
+            <span className="underline font-semibold">Inicia sesión</span>
           </Link>
         </div>
         
