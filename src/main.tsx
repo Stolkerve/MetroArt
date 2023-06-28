@@ -10,9 +10,9 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 import Landing from "./views/Landing";
-import { Login } from "./views/Login/Login";
+import { Login } from "./views/Login";
 import { homeURL, loginURL, registerURL } from "./constants/urls";
-import { Register } from "./views/Register/Register";
+import { Register } from "./views/Register";
 
 const router = createBrowserRouter(
   createRoutesFromElements(

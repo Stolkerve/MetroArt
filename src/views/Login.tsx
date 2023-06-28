@@ -1,12 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
-import styles from "./Login.module.css";
-import { homeURL, registerURL } from "../../constants/urls";
+import { homeURL, registerURL } from "../constants/urls";
 import { useState } from 'react';
 import {
   emailPasswordLogin,
   googleLogin,
- } from "../../firebase/auth-service";
- import campusBackground from "../../assets/campus.jpg";
+ } from "../firebase/auth-service";
+ import campusBackground from "../assets/campus.jpg";
 
 
 export function Login() {
@@ -100,9 +99,9 @@ export function Login() {
               Facebook
             </button>
   
-          <Link to={registerURL} className={styles.loginRedirect}>
+          <Link to={registerURL} >
             No account?{" "}
-            <span className={styles.redirectLink}>Sign up</span>
+            <span >Sign up</span>
           </Link>
         </form>
       </div>

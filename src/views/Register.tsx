@@ -1,11 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
-import { homeURL, loginURL } from "../../constants/urls";
+import { homeURL, loginURL } from "../constants/urls";
 import {
   emailPasswordRegister,
   googleLogin,
-} from "../../firebase/auth-service";
+} from "../firebase/auth-service";
 import { useState } from "react";
-import campusBackground from "../../assets/campus.jpg";
+import campusBackground from "../assets/campus.jpg";
 
 export function Register() {
   const navigate = useNavigate();
