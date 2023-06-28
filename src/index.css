@@ -25,6 +25,12 @@ body {
 }
 
 @layer base {
+    input {
+        @apply block text-black border-[#F77F00] border-2 rounded w-4/5 h-10;
+    } 
+}
+
+@layer components {
     .inputContainer {
         @apply pl-28 w-full;
       }
@@ -32,9 +38,4 @@ body {
     .inputLabel {
         @apply block text-white font-semibold text-sm pb-2;
     }
-  
-    input {
-        @apply block text-black border-[#F77F00] border-2 rounded w-4/5 h-10;
-        
-    } 
 }
