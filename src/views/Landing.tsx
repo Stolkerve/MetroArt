@@ -135,7 +135,7 @@ export default function landing() {
                 />
               </Zoom>
             ) : (
-              <Zoom cascade duration={250} direction="up" triggerOnce className="flex justify-center">
+              <Zoom cascade duration={150} direction="up" triggerOnce className="flex justify-center">
                 {
                   [0, 1, 2, 3, 4, 5].map((v) => {
                     return (
