@@ -22,6 +22,9 @@ export function Login() {
     } catch (e: any) {
       setLoading(false);
       setErrMsg("Ocurro un error...");
+
+      // const errorCode = error.code;
+      // const errorMessage = error.message;
     }
   };
 

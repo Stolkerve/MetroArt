@@ -7,6 +7,7 @@ import { LineWave } from "react-loader-spinner";
 import { loginWithProvider } from "../firebase/auth-service";
 import { facebookProvider, googleProvider } from "../firebase/client";
 import { useNavigate } from "react-router-dom";
+import { FacebookAuthProvider, GoogleAuthProvider } from "firebase/auth";
 
 interface IProps {
   submitHandlerFunc: UseFormHandleSubmit<any, undefined>;
@@ -23,11 +24,24 @@ export const AuthFormLayout = ({
   submitHandlerFunc,
   onSubmitFunc,
   loading,
+  setLoading,
   children,
   title,
   redirectNode,
 }: IProps) => {
   const navigate = useNavigate();
+
+  const login = async (provider: GoogleAuthProvider | FacebookAuthProvider) => {
+    setLoading(true)
+    try {
+      await loginWithProvider(provider)
+    } catch (e: any) {
+      console.log(e)
+      // const errorCode = error.code;
+      // const errorMessage = error.message;
+      setLoading(false)
+    }
+  }
 
   return (
     <div className="flex justify-center items-center w-screen max-h-screen h-screen ">
@@ -36,9 +50,14 @@ export const AuthFormLayout = ({
         onSubmit={submitHandlerFunc(onSubmitFunc)}
         className="relative w-full h-full max-h-screen bg-[#1D3557] flex overflow-y-scroll p-4"
       >
-        <button className="absolute rounded-full p-2 bg-[#F77F00] text-2xl" onClick={() => navigate("/")}>
-          <FaHome/>
-        </button>
+
+        {
+          !loading ? (
+            <button className="absolute rounded-full p-2 bg-[#F77F00] text-2xl" onClick={() => navigate("/")}>
+              <FaHome/>
+            </button>
+          ) : (<></>)
+        }
         <fieldset
           className="flex flex-col items-center space-y-4 m-auto"
           disabled={loading}
@@ -50,7 +69,6 @@ export const AuthFormLayout = ({
               width="250"
               color="#F77F00"
               ariaLabel="line-wave"
-              wrapperStyle={{}}
               visible={true}
             />
           ) : (
@@ -62,7 +80,7 @@ export const AuthFormLayout = ({
                   <button
                     type="button"
                     className="btn-secondary flex justify-center items-center gap-4"
-                    onClick={() => loginWithProvider(googleProvider)}
+                    onClick={() => login(googleProvider)}
                   >
                     <span className="text-4xl">
                       <FcGoogle />
@@ -72,7 +90,7 @@ export const AuthFormLayout = ({
                   <button
                     type="button"
                     className="btn-secondary flex  justify-center items-center gap-4"
-                    onClick={() => loginWithProvider(facebookProvider)}
+                    onClick={() => login(facebookProvider)}
                   >
                     <span className="text-4xl">
                       <FaFacebook />
