@@ -8,6 +8,7 @@ import { loginWithProvider } from "../firebase/auth-service";
 import { facebookProvider, googleProvider } from "../firebase/client";
 import { useNavigate } from "react-router-dom";
 import { FacebookAuthProvider, GoogleAuthProvider } from "firebase/auth";
+import { dashboardURL } from "../constants/urls";
 
 interface IProps {
   submitHandlerFunc: UseFormHandleSubmit<any, undefined>;
@@ -35,6 +36,7 @@ export const AuthFormLayout = ({
     setLoading(true)
     try {
       await loginWithProvider(provider)
+      navigate(dashboardURL);
     } catch (e: any) {
       console.log(e)
       // const errorCode = error.code;
