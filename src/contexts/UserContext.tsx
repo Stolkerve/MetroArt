@@ -3,7 +3,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { auth } from "../firebase/client";
 import { getUserProfile } from "../firebase/users-service";
 
-
 export const UserContext = React.createContext({});
 
 export function UserContextProvider({ children }: any) {
@@ -39,5 +38,5 @@ export function UserContextProvider({ children }: any) {
 }
 
 export function useUser() {
-    return useContext(UserContext);
+  return useContext(UserContext);
 }
