@@ -52,6 +52,7 @@ export function Login() {
           type="email"
           placeholder="Ingresa tu email"
           className="input"
+          required
           {...register("email")}
         />
       </div>
@@ -65,6 +66,9 @@ export function Login() {
           type="password"
           placeholder="Ingresa tu contraseña"
           className="input"
+          required
+          minLength={6}
+          maxLength={18}
           {...register("password")}
         />
       </div>
