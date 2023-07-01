@@ -27,17 +27,17 @@ export const AuthFormLayout = ({
   redirectNode,
 }: IProps) => {
   return (
-    <div className="flex justify-center items-center w-full h-screen">
+    <div className="flex justify-center items-center w-screen max-h-screen h-screen ">
       <img src={campusBackground} className="min-w-[60%] h-full" />
       <form
         onSubmit={submitHandlerFunc(onSubmitFunc)}
-        className="w-full h-full bg-[#1D3557] flex justify-center"
+        className="w-full h-full max-h-screen bg-[#1D3557] flex overflow-y-scroll p-4"
       >
         <fieldset
-          className="w-full flex flex-col justify-center items-center gap-6 p-6"
+          className="flex flex-col items-center space-y-4 m-auto"
           disabled={loading}
         >
-          <h1 className="text-4xl font-bold">{title}</h1>
+          <h1 className="text-4xl font-bold text-center mb-8">{title}</h1>
           {loading ? (
             <LineWave
               height="250"
@@ -51,7 +51,7 @@ export const AuthFormLayout = ({
             <>
               {children}
 
-              <div className="flex justify-center items-center flex-col mt-6">
+              <div className="flex justify-center items-center flex-col pt-6">
                 <div className="flex flex-row gap-4 w-full justify-center">
                   <button
                     type="button"
