@@ -1,165 +1,141 @@
-import { Link, useNavigate } from "react-router-dom";
-import { homeURL, loginURL } from "../constants/urls";
-import {
-  emailPasswordRegister,
-  googleLogin,
-} from "../firebase/auth-service";
+import { SubmitHandler, useForm } from "react-hook-form";
+
 import { useState } from "react";
-import campusBackground from "../assets/campus.jpg";
+import { AuthFormLayout } from "../components/AuthFormLayout";
+import { IRegisterForm } from "../models/IRegisterForm";
+import { Link, useNavigate } from "react-router-dom";
+import { loginURL } from "../constants/urls";
+import { emailPasswordRegister } from "../firebase/auth-service";
 
 export function Register() {
+  const [errMsg, setErrMsg] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const [formData, setData] = useState({});
 
-  const onSuccess = () => {
-    navigate(homeURL);
-  };
+  const { register, handleSubmit } = useForm<IRegisterForm>();
 
-  const onFail = (_error: any) => {
-    console.log("REGISTER FAILED, Try Again");
-  };
+  const onSubmit: SubmitHandler<IRegisterForm> = async ({
+    email,
+    password,
+    rePassword,
+    phone,
+    username,
+  }) => {
+    setLoading(true);
+    if (password != rePassword) {
+      setErrMsg("Las contrasenas no coinciden.");
+      setLoading(false);
+      return;
+    }
 
-  const handleSubmit = async (event: any) => {
-    event.preventDefault();
+    console.log(email, password, username, phone);
+    try {
+      // await emailPasswordRegister(email, password, username, phone)
+      // navigate("/dashboard")
+    } catch (e: any) {
+      setLoading(false);
+      setErrMsg("Error creando usuario...");
 
-    const {email, password, ...extraData}: any = formData;
-    
-    await emailPasswordRegister({
-      userData: formData},
-      onSuccess,
-      onFail,
-    );
-  };
-
-  const handleGoogleClick = async () => {
-    await googleLogin( {onSuccess: () => navigate(homeURL)},
-      {onFail: () => window.alert("Ha ocurrido un error")},
-    );
-  };
-
-  const whenChange = (event: any) => {
-    const {name, value} = event.target;
-
-    setData((oldData) => ({
-      ...oldData,
-      [name]: value,
-      favorites: [],
-      role: "regular",
-    }));
+      // const errorCode = error.code;
+      // const errorMessage = error.message;
+    }
   };
 
   return (
-    <div className="container flex flex-row justify-center items-center w-screen   h-screen">
-      <img src={campusBackground} className="w-1/2 h-full" />
-      <form className="w-1/2 h-full bg-[#1D3557] grid grid-cols-1 p-6 place-items-center items-center">
-        <h1 className="text-4xl font-bold p-0">Registro de Usuario</h1>
-        <p className="text-white mb-2 text-lg">
-          Crea tu cuenta para acceder 
-        </p>
+    <AuthFormLayout
+      title="Registro de Usuario"
+      submitHandlerFunc={handleSubmit}
+      onSubmitFunc={onSubmit}
+      setErrMsg={setErrMsg}
+      loading={loading}
+      setLoading={setLoading}
+      redirectNode={
+        <Link to={loginURL} className="mt-4 whitespace-normal">
+          <span className="">Ya tienes una cuenta? </span>
+          <span className="underline font-semibold">Inicia sesión</span>
+        </Link>
+      }
+    >
+      {/*Name*/}
+      <div className="inputContainer">
+        <label className="inputLabel" htmlFor="name">
+          <span>Nombre</span>
+        </label>
+        <input
+          className="input"
+          type="text"
+          placeholder="Ingresa tu nombre"
+          {...register("username")}
+          required
+          minLength={3}
+          maxLength={50}
+        />
+      </div>
 
-        {/*Name*/}
-        <div className="inputContainer">
-          <label className="inputLabel" htmlFor="name">
-            <span>Nombre</span>
-          </label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Ingresa tu nombre"
-            onChange={whenChange}
-          />
-        </div>
+      {/*Email*/}
+      <div className="inputContainer">
+        <label className="inputLabel" htmlFor="email">
+          <span>Email</span>
+        </label>
+        <input
+          className="input"
+          type="email"
+          placeholder="Ingresa tu email"
+          {...register("email")}
+          required
+        />
+      </div>
 
-        {/*Email*/}
-        <div className="inputContainer">
-          <label className="inputLabel" htmlFor="email">
-            <span>Email</span>
-          </label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Ingresa tu email"
-            onChange={whenChange}
-          />
-        </div>
+      {/*Password*/}
+      <div className="inputContainer">
+        <label className="inputLabel" htmlFor="password">
+          <span>Contraseña</span>
+        </label>
+        <input
+          className="input"
+          type="password"
+          placeholder="Ingresa tu contraseña"
+          required
+          minLength={6}
+          maxLength={18}
+          {...register("password")}
+        />
+      </div>
 
-        {/*Password*/}
-        <div className="inputContainer">
-          <label className="inputLabel" htmlFor="password">
-            <span>Contraseña</span>
-          </label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            placeholder="Ingresa tu contraseña"
-            onChange={whenChange}
-          />
-        </div>
+      {/*Repeat Password*/}
+      <div className="inputContainer">
+        <label className="inputLabel" htmlFor="password">
+          <span>Repetir Contraseña</span>
+        </label>
+        <input
+          className="input"
+          type="password"
+          placeholder="Ingresa tu contraseña"
+          required
+          {...register("rePassword")}
+        />
+      </div>
 
-        {/*Repeat Password*/}
-        <div className="inputContainer">
-          <label className="inputLabel" htmlFor="password">
-            <span>Repetir Contraseña</span>
-          </label>
-          <input
-            type="password"
-            name="repeatPassword"
-            id="repeatPassword"
-            placeholder="Ingresa tu contraseña"
-            onChange={whenChange}
-          />
-        </div>
+      {/*Teléfono*/}
+      <div className="inputContainer">
+        <label className="inputLabel" htmlFor="telefono">
+          <span>Teléfono</span>
+        </label>
+        <input
+          className="input"
+          type="tel"
+          placeholder="+54 4140000000"
+          pattern="([\+][0-9]{2}) [0-9]{10}"
+          required
+          {...register("phone")}
+        />
+      </div>
 
-        {/*Teléfono*/}
-        <div className="inputContainer">
-          <label className="inputLabel" htmlFor="telefono">
-            <span>Teléfono</span>
-          </label>
-          <input
-            type="number"
-            name="telefono"
-            id="telefono"
-            placeholder="Ingresa tu teléfono"
-            onChange={whenChange}
-          />
+      <div className="text-red-500 font-medium">{errMsg}</div>
 
-          <button
-            type="submit"
-            className= "bg-[#F77F00] w-4/5 mt-6 h-10 rounded-lg font-bold"
-            onClick={handleSubmit}
-          >
-            Registrarse
-          </button>
-        </div>
-        
-        <div className="flex justify-center items-center flex-col w-full">
-          <div className="flex flex-row gap-4 w-full justify-center">
-            <button
-              type="button"
-              className="border-2 border-white rounded p-4 font-semibold w-1/3 mt-2"
-              onClick={handleGoogleClick}
-            >
-              Google
-            </button>
-              <button
-                type="button"
-                className="border-2 border-white rounded p-4 font-semibold w-1/3 mt-2"
-                onClick={handleGoogleClick}
-              >
-                Facebook
-              </button>
-          </div>
-          
-          <Link to={loginURL} className="mt-4">
-            Ya tienes una cuenta?{" "}
-            <span className="underline font-semibold">Inicia sesión</span>
-          </Link>
-        </div>
-        
-      </form>
-    </div>
+      <button type="submit" className="btn-primary">
+        Registrarse
+      </button>
+    </AuthFormLayout>
   );
 }

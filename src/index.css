@@ -3,39 +3,44 @@
 @tailwind utilities;
 
 body {
-    color: white;
-    background-color: #F77F00;
+  color: white;
+  background-color: #f77f00;
 }
 
 .tour-transitions {
-    transition: ease-in-out 200ms;
-    box-shadow: none;
-    transform: scale(1);
-    cursor: pointer;
+  transition: ease-in-out 200ms;
+  box-shadow: none;
+  transform: scale(1);
+  cursor: pointer;
 }
 
 .tour-transitions:hover {
-    box-shadow: 5px 5px 0px 0px white;
-    transform: scale(101%);
+  box-shadow: 5px 5px 0px 0px white;
+  transform: scale(101%);
 }
 
 .tour-transitions:active {
-    box-shadow: 5px 5px 0px 0px white;
-    transform: scale(99%);
+  box-shadow: 5px 5px 0px 0px white;
+  transform: scale(99%);
 }
 
 @layer base {
-    input {
-        @apply block text-black border-[#F77F00] border-2 rounded w-4/5 h-10;
-    } 
 }
 
 @layer components {
-    .inputContainer {
-        @apply pl-28 w-full;
-      }
+  .inputLabel {
+    @apply block text-white font-semibold text-sm pb-2;
+  }
 
-    .inputLabel {
-        @apply block text-white font-semibold text-sm pb-2;
-    }
+  .input {
+    @apply block text-black border-[#F77F00] focus:outline-none border-2 rounded-lg w-96 h-10 px-2 p-1 disabled:bg-gray-300;
+  }
+
+  .btn-primary {
+    @apply bg-[#F77F00] px-6 py-4 w-60 rounded-lg font-bold disabled:bg-orange-400;
+  }
+
+  .btn-secondary {
+    @apply transition duration-100 border-2 border-white rounded p-4 font-semibold mt-2 disabled:bg-slate-600;
+  }
 }

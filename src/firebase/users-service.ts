@@ -1,28 +1,28 @@
 import {
-    doc,
-    addDoc,
-    collection,
-    updateDoc,
-    getDoc,
-    setDoc,
-    getDocs,
-    query,
-    where,
-  } from "firebase/firestore";
-  import { db } from "./client";
+  doc,
+  addDoc,
+  collection,
+  updateDoc,
+  getDoc,
+  setDoc,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
+import { db } from "./client";
 
-  export const usersCollection = "users";
-  
-  export async function createUser(data: any) {
-    const { uid, ...restData } = data;
-  
-    if (uid) {
-      return setDoc(doc(db, usersCollection, uid), restData);
-    }
-  
-    return addDoc(collection(db, usersCollection), restData);
+export const usersCollection = "users";
+
+export async function createUser(data: any) {
+  const { uid, ...restData } = data;
+
+  if (uid) {
+    return setDoc(doc(db, usersCollection, uid), restData);
   }
-  
+
+  return addDoc(collection(db, usersCollection), restData);
+}
+
 //   export async function updateUserFavorites(userId, newFavs) {
 //     const allFavs = [];
 //     const userRef = doc(db, usersCollection, userId);
@@ -34,10 +34,10 @@ import {
 //       if (oldFavs.length < 1) {
 //         allFavs.push(newFavs);
 //       } else {
-        
+
 //         for (let index = 0; index < oldFavs.length; index++) {
 //           const element = oldFavs[index];
-//           allFavs.push(element); 
+//           allFavs.push(element);
 //         }
 //         allFavs.push(newFavs)
 
@@ -48,44 +48,26 @@ import {
 //           console.error('ERROR UPDATING FAVORITES:', error);
 //         }
 //       }
-//     } 
+//     }
 //   }
-  
-  export async function getUserMovies(userID: string) {
-    const userRef = doc(db, usersCollection, userID);
-    try {
-      const userDoc = await getDoc(userRef);
-      
-      const favorites = userDoc.data()?.favorites;
-      console.log('OBTAINED: ', favorites);
-      return favorites;
 
-    } catch (error) {
-      console.error('ERROR', error);
-      return null;
-    }
+export async function getUserById(userId: string) {
+  const userRef = doc(db, usersCollection, userId);
+  return getDoc(userRef);
+}
+
+export async function getUserProfile(email: string) {
+  const userQuery = query(collection(db, usersCollection), where("email", "==", email));
+
+  const results = await getDocs(userQuery);
+
+  if (results.size > 0) {
+    const [user] = results.docs.map((item) => ({
+      ...item.data(),
+      id: item.id,
+    }));
+    return user;
   }
 
-  export async function getUserById(userId: string) {
-    const userRef = doc(db, usersCollection, userId);
-    return getDoc(userRef);
-  }
-  
-  export async function getUserProfile(email: string) {
-    const userQuery = query(
-      collection(db, usersCollection),
-      where("email", "==", email)
-    );
-  
-    const results = await getDocs(userQuery);
-  
-    if (results.size > 0) {
-      const [user] = results.docs.map((item) => ({
-        ...item.data(),
-        id: item.id,
-      }));
-      return user;
-    }
-  
-    return null;
-  }
+  return null;
+}

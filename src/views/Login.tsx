@@ -1,109 +1,76 @@
 import { Link, useNavigate } from "react-router-dom";
-import { homeURL, registerURL } from "../constants/urls";
-import { useState } from 'react';
-import {
-  emailPasswordLogin,
-  googleLogin,
- } from "../firebase/auth-service";
- import campusBackground from "../assets/campus.jpg";
-
+import { registerURL } from "../constants/urls";
+import { useState } from "react";
+import { emailPasswordLogin } from "../firebase/auth-service";
+import { AuthFormLayout } from "../components/AuthFormLayout";
+import { ILoginForm } from "../models/ILoginForm";
+import { SubmitHandler, useForm } from "react-hook-form";
 
 export function Login() {
+  const [errMsg, setErrMsg] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
 
-  const onSuccess = () => {
-    navigate(homeURL);
+  const { register, handleSubmit } = useForm<ILoginForm>();
+
+  const onSubmit: SubmitHandler<ILoginForm> = async ({ email, password }) => {
+    setLoading(true);
+    console.log(email, password);
+    try {
+      // emailPasswordLogin(email, password)
+      // navigate("/dashboard");
+    } catch (e: any) {
+      setLoading(false);
+      setErrMsg("Ocurro un error...");
+    }
   };
 
-  const onFail = (_error: any) => {
-    console.log("LOGIN FAILED, Try Again");
-  };
-
-  const onSubmit = async (event: any) => {
-    event.preventDefault();
-
-    await emailPasswordLogin({userData: formData}, onSuccess, onFail );
-  };
-
-  const onChange = (event: any) => {
-    const { name, value } = event.target;
-
-    setFormData((oldData) => ({ ...oldData, [name]: value }));
-  };
-
-  const handleGoogleClick = async () => {
-    await googleLogin( {onSuccess: () => navigate(homeURL)},
-      {onFail: () => window.alert("Ha ocurrido un error")},
-    );
-  };
-  
-    return (
-<div className="container flex flex-row justify-center items-center w-screen   h-screen">
-      <img src={campusBackground} className="w-1/2 h-full" />
-      <form className="w-1/2 h-full bg-[#1D3557] grid grid-cols-1 p-6 place-items-center items-center">
-        <h1 className="text-4xl font-bold p-0">Inicio de sesión</h1>
-        <p className="text-white mb-2 text-lg">
-          Inicia sesión para acceder 
-        </p>
-
-  
-             {/*Email*/}
-             <div className="inputContainer">
-          <label className="inputLabel" htmlFor="email">
-            <span>Email</span>
-          </label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Ingresa tu email"
-          />
-        </div>
-  
-          {/*Password*/}
-          <div className="inputContainer">
-          <label className="inputLabel" htmlFor="password">
-            <span>Contraseña</span>
-          </label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            placeholder="Ingresa tu contraseña"
-          />
-        </div>
-  
-        <button
-            type="submit"
-            className= "bg-[#F77F00] w-4/5 mt-6 h-10 rounded-lg font-bold"
-          >
-            Iniciar sesión
-          </button>
-          <button
-              type="button"
-              className="border-2 border-white rounded p-4 font-semibold w-1/3 mt-2"
-              onClick={handleGoogleClick}
-            >
-              Google
-            </button>
-            
-            <button
-              type="button"
-              className="border-2 border-white rounded p-4 font-semibold w-1/3 mt-2"
-              onClick={handleGoogleClick}
-            >
-              Facebook
-            </button>
-  
-          <Link to={registerURL} >
-            No account?{" "}
-            <span >Sign up</span>
-          </Link>
-        </form>
+  return (
+    <AuthFormLayout
+      title="Ingreso de Usuario"
+      submitHandlerFunc={handleSubmit}
+      onSubmitFunc={onSubmit}
+      setErrMsg={setErrMsg}
+      loading={loading}
+      setLoading={setLoading}
+      redirectNode={
+        <Link to={registerURL} className="mt-4 whitespace-normal">
+          <span className="">No tienes una cuenta? </span>
+          <span className="underline font-semibold">Registrate</span>
+        </Link>
+      }
+    >
+      {/*Email*/}
+      <div className="inputContainer">
+        <label className="inputLabel" htmlFor="email">
+          <span>Email</span>
+        </label>
+        <input
+          type="email"
+          placeholder="Ingresa tu email"
+          className="input"
+          {...register("email")}
+        />
       </div>
-    );
+
+      {/*Password*/}
+      <div className="inputContainer">
+        <label className="inputLabel" htmlFor="password">
+          <span>Contraseña</span>
+        </label>
+        <input
+          type="password"
+          placeholder="Ingresa tu contraseña"
+          className="input"
+          {...register("password")}
+        />
+      </div>
+
+      <div className="text-red-500 font-medium">{errMsg}</div>
+
+      <button type="submit" className="btn-primary">
+        Ingresar
+      </button>
+    </AuthFormLayout>
+  );
 }
