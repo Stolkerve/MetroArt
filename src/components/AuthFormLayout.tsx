@@ -1,11 +1,12 @@
 import React, { ReactNode } from "react";
 import { FcGoogle } from "react-icons/fc";
-import { FaFacebook } from "react-icons/fa";
+import { FaFacebook, FaHome } from "react-icons/fa";
 import campusBackground from "../assets/campus.jpg";
 import { SubmitHandler, UseFormHandleSubmit } from "react-hook-form";
 import { LineWave } from "react-loader-spinner";
 import { loginWithProvider } from "../firebase/auth-service";
 import { facebookProvider, googleProvider } from "../firebase/client";
+import { useNavigate } from "react-router-dom";
 
 interface IProps {
   submitHandlerFunc: UseFormHandleSubmit<any, undefined>;
@@ -26,13 +27,18 @@ export const AuthFormLayout = ({
   title,
   redirectNode,
 }: IProps) => {
+  const navigate = useNavigate();
+
   return (
     <div className="flex justify-center items-center w-screen max-h-screen h-screen ">
       <img src={campusBackground} className="min-w-[60%] h-full" />
       <form
         onSubmit={submitHandlerFunc(onSubmitFunc)}
-        className="w-full h-full max-h-screen bg-[#1D3557] flex overflow-y-scroll p-4"
+        className="relative w-full h-full max-h-screen bg-[#1D3557] flex overflow-y-scroll p-4"
       >
+        <button className="absolute rounded-full p-2 bg-[#F77F00] text-2xl" onClick={() => navigate("/")}>
+          <FaHome/>
+        </button>
         <fieldset
           className="flex flex-col items-center space-y-4 m-auto"
           disabled={loading}
