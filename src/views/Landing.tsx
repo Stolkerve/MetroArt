@@ -5,6 +5,8 @@ import { LineWave } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom";
 import { loginURL, registerURL } from "../constants/urls";
 import { TourCard } from "../components/TourCard";
+import db from "../db.json";
+import { ITour } from "../models/ITour";
 
 export default function landing() {
   const [loading, setLoading] = useState(true);
@@ -88,10 +90,22 @@ export default function landing() {
               </div>
             </div>
             <div className="flex justify-center items-center px-10 space-x-4">
-              <img className="rounded-2xl max-w-sm h-[38rem]" src={campusBackground} />
+              <img
+                className="rounded-2xl max-w-sm h-[38rem]"
+                src={campusBackground}
+                style={{ boxShadow: "0px 6px 0px 6px #1D3557" }}
+              />
               <div className="space-y-4">
-                <img className="rounded-2xl max-w-xs" src={campusBackground} />
-                <img className="rounded-2xl max-w-xs" src={campusBackground} />
+                <img
+                  className="rounded-2xl max-w-xs"
+                  src={campusBackground}
+                  style={{ boxShadow: "8px 8px 0px 0px #1D3557" }}
+                />
+                <img
+                  className="rounded-2xl max-w-xs"
+                  src={campusBackground}
+                  style={{ boxShadow: "8px 8px 0px 0px #1D3557" }}
+                />
               </div>
             </div>
           </div>
@@ -185,10 +199,8 @@ export default function landing() {
             </Zoom>
           ) : (
             <Zoom cascade duration={150} direction="up" triggerOnce className="flex justify-center">
-              {[0, 1, 2, 3, 4, 5].map(() => {
-                return (
-                  <TourCard/>
-                );
+              {db.tours.map((t: ITour) => {
+                return <TourCard tour={t} />;
               })}
             </Zoom>
           )}

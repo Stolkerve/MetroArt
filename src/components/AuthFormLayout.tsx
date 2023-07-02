@@ -32,16 +32,16 @@ export const AuthFormLayout = ({
   const navigate = useNavigate();
 
   const login = async (provider: GoogleAuthProvider | FacebookAuthProvider) => {
-    setLoading(true)
+    setLoading(true);
     try {
-      await loginWithProvider(provider)
+      await loginWithProvider(provider);
     } catch (e: any) {
-      console.log(e)
+      console.log(e);
       // const errorCode = error.code;
       // const errorMessage = error.message;
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   return (
     <div className="flex justify-center items-center w-screen max-h-screen h-screen ">
@@ -50,18 +50,17 @@ export const AuthFormLayout = ({
         onSubmit={submitHandlerFunc(onSubmitFunc)}
         className="relative w-full h-full max-h-screen bg-[#1D3557] flex overflow-y-scroll p-4"
       >
-
-        {
-          !loading ? (
-            <button className="absolute rounded-full p-2 bg-[#F77F00] text-2xl" onClick={() => navigate("/")}>
-              <FaHome/>
-            </button>
-          ) : (<></>)
-        }
-        <fieldset
-          className="flex flex-col items-center space-y-4 m-auto"
-          disabled={loading}
-        >
+        {!loading ? (
+          <button
+            className="absolute rounded-full p-2 bg-[#F77F00] text-2xl"
+            onClick={() => navigate("/")}
+          >
+            <FaHome />
+          </button>
+        ) : (
+          <></>
+        )}
+        <fieldset className="flex flex-col items-center space-y-4 m-auto" disabled={loading}>
           <h1 className="text-4xl font-bold text-center mb-8">{title}</h1>
           {loading ? (
             <LineWave
