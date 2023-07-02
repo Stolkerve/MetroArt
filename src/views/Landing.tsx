@@ -1,15 +1,13 @@
 import { Fade, Zoom } from "react-awesome-reveal";
 import campusBackground from "../assets/campus.jpg";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { LineWave } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom";
 import { loginURL, registerURL } from "../constants/urls";
 
-export default function landing() {
+export default function Landing() {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-
-  useEffect(() => {}, []);
 
   const handleLoginButton = () => {
     navigate(loginURL);

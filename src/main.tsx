@@ -7,6 +7,7 @@ import { Login } from "./views/Login";
 import { dashboardURL, homeURL, loginURL, registerURL } from "./constants/urls";
 import { Register } from "./views/Register";
 import { Dashboard } from "./views/Dashboard";
+import { Layout } from "./views/Layout";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
@@ -15,7 +16,10 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         <Route path={homeURL} element={<Landing />} />
         <Route path={registerURL} element={<Register />} />
         <Route path={loginURL} element={<Login />} />
-        <Route path={dashboardURL} element={<Dashboard />} />
+        
+        <Route element={<Layout />} >
+          <Route path={dashboardURL} element={<Dashboard />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
