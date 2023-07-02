@@ -4,5 +4,5 @@ export interface IArtWork {
   kind: string;
   author: string;
   location: string;
-  imagesUrl: string[];
+  imageUrls: string[];
 }

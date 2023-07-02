@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-
+import { useState, useEffect } from "react";
 import { homeURL,
     profileURL,
     dashboardURL, 
@@ -10,10 +10,13 @@ import { homeURL,
 
 import { logout } from "../firebase/auth-service";
 import { UserContext, useUser } from "../contexts/UserContext";
+import { getProfilePicture } from "../firebase/users-service";
 
 export function Navbar() {
   const navigate = useNavigate();
   const { user, isLoadingUser } = useUser() as UserContext;
+  const [profilePicture, setProfilePicture] = useState("");
+
 
   const displayName = (userName: string) => {
     if (user.username.includes(" ")) {
@@ -31,30 +34,56 @@ export function Navbar() {
     navigate(homeURL)
   };
 
+  async function fetchProfilePicture() {
+    try {
+
+      const downloadURL = await getProfilePicture(user.id);
+      setProfilePicture(downloadURL);
+    } catch (error) {
+      console.error("Error al obtener la foto de perfil:", error);
+    }
+  }  
+
+  useEffect(() => {
+    if (!isLoadingUser) {
+      fetchProfilePicture();
+      console.log("llego y actualizo")
+    }
+    
+    
+    
+  }, [isLoadingUser])
+
+
+
+  
+
   return (
     <nav className="pt-14 h-screen max-w-40 max-h-screen w-40 bg-[#F77F00] flex flex-row justify-center font-semibold text-center">
 
       {!isLoadingUser && (
-        <ul className="flex flex-col list-none gap-2">
+        <ul className="flex flex-col items-center list-none gap-2">
             <>
-              <li className="rounded-md hover:scale-105">
-                <Link to={profileURL}>
-                  
-                  <span>{displayName(user.username)}</span>
-                  
-                </Link>
-              </li>
+              <Link to={profileURL}>
+                <li className="rounded-md hover:scale-105">
+                  <div className="mt-5 justify-center w-[80px] h-[80px] rounded-full bg-[#F77F00] mb-4 drop-shadow-sm">
+                  <img className="h-full w-full rounded-full border-white border" src={profilePicture} alt="" />
+                  </div>
+                    
+                    <span>{displayName(user.username)}</span>  
+                </li>
+              </Link>
               <div className="mt-2 content-none w-28 bg-white h-1" />
               <li className="mt-6 rounded-md hover:scale-105">
                 <Link to={dashboardURL}>
-                  <span>Home</span>
-                </Link>
-              </li>
-              <li className="rounded-md hover:scale-105">
-                <Link to={toursURL}>
                   <span>Tours</span>
                 </Link>
               </li>
+              {/* <li className="rounded-md hover:scale-105">
+                <Link to={toursURL}>
+                  <span>Tours</span>
+                </Link>
+              </li> */}
               <li className="mb-4 rounded-md hover:scale-105">
                 <Link to={userReservesURL}>
                   <span>Reservaciones</span>

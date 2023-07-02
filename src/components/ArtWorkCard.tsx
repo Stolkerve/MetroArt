@@ -6,7 +6,7 @@ export const ArtWorkCard = ({ artwork }: { artwork: IArtWork }) => {
   const [imgIndex, setImgIndex] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {
-      if (imgIndex >= artwork.imagesUrl.length - 1) {
+      if (imgIndex >= artwork.imageUrls.length - 1) {
         setImgIndex(0);
         return;
       }

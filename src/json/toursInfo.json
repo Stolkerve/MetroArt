@@ -1,0 +1,512 @@
+{
+  "tours": [
+    {
+        "id": 0,
+        "name": "Sendero De Esculturas",
+        "description": "El tour 'Sendero De Esculturas' de la Universidad Metropolitana, es una experiencia fascinante que permite a los visitantes apreciar una colección impresionante de obras de arte en un ambiente académico y cultural. El recorrido comienza en la entrada principal de la universidad, donde se encuentra 'Palos de Rosa Encofrados' realizada por Oscar Machado. desde allí, se continúa hacia el patio central, donde se pueden apreciar varias obras de gran tamaño, como 'Relación Continua' de Pedro Fermín, 'Centinela del Saber' de Nohemi Marquez, 'Reina de Piedra en Negativo' de Eduardo Vera, 'Columnas' de Jose Antonio Fernandez, 'Latente' de Francisco Martínez y 'Alada Penetración' de José Manuel Da Silva. Luego, el tour se dirige a la parte baja del edificio de la biblioteca, en la zona exterior donde se encuentra la escultura 'Vertical Amarillo y Blanco' de Luis Mille. El tour continúa con la vuelta al patio central con las esculturas 'Útero Nocturno' de Eduardo Azuaje, 'Velocidad Cero' de Gabriel Azuaje y para finalizar el tour la obra 'De La Seda Al Nigredo' de Milagros Serritielo y 'Refugio' de Sidia Reyes.",
+        "weekdays": "1, 4, 6",
+        "artworks": [
+            {
+                "name": "Relacion Continua",
+                "description": "Escultura colgante de metal policromado",
+                "kind": "Escultura",
+                "author": "Pedro Fermin",
+                "location": "Edificio A2",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSendero%20De%20Esculturas%2FImagen%201_1.png?alt=media&token=e110d80e-a457-4f47-b255-3ccf993adc8e"]
+            },
+            {
+                "name": "De La Seda Al Nigredo",
+                "description": "Escultura de Hierro Soldado",
+                "kind": "Escultura",
+                "author": "Milagros Serritielo",
+                "location": "Patio de la Capilla",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSendero%20De%20Esculturas%2FImagen%201_2.png?alt=media&token=2b19a512-311b-475c-abb1-610f3ef511cc"]
+            },
+            {
+                "name": "Centinela Del Saber",
+                "description": "Escultura ceramica",
+                "kind": "Escultura",
+                "author": "Nohemi Marquez",
+                "location": "Patio Central",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSendero%20De%20Esculturas%2FImagen%201_3.png?alt=media&token=96deb1d2-fa4c-4329-83e3-c2a96456e55f"]
+            },
+            {
+                "name": "Reina De Piedra En Negativo",
+                "description": "Escultura en ensamblaje de hierro y piedra caliza",
+                "kind": "Escultura",
+                "author": "Eduardo Vera",
+                "location": "Patio central",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSendero%20De%20Esculturas%2FImagen%201_4.png?alt=media&token=97bce10b-2f11-4744-bda8-01b4f7f0aa29"]
+            },
+            {
+                "name": "Vertical Amarillo y Blanco",
+                "description": "Escultura de metal policromado",
+                "kind": "Escultura",
+                "author": "Luis Mille",
+                "location": "Patio de Biblioteca",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSendero%20De%20Esculturas%2FImagen%201_5.png?alt=media&token=28395ec1-ba8c-44e6-aede-49c030276c43"]
+            },
+            {
+                "name": "Columnas",
+                "description": "Escultura de bronce",
+                "kind": "Escultura",
+                "author": "Jose Antonio Fernandez",
+                "location": "Patio central",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSendero%20De%20Esculturas%2FImagen%201_6.png?alt=media&token=4600c532-d4e6-43c6-82f7-50ec281e0edf"]
+            },
+            {
+                "name": "Refugio",
+                "description": "Escultura de hierro soldado",
+                "kind": "Escultura",
+                "author": "Sidia Reyes",
+                "location": "Jardin del estacionamiento",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSendero%20De%20Esculturas%2FImagen%201_7.png?alt=media&token=76fd0faa-1a0f-4ec1-abac-3d27cb95810a"]
+            },
+            {
+                "name": "Latente",
+                "description": "Escultura de hierro soldado",
+                "kind": "Escultura",
+                "author": "Francisco Martinez",
+                "location": "Patio central",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSendero%20De%20Esculturas%2FImagen%201_8.png?alt=media&token=deca48d5-9515-4f29-8b5e-9014841a5f2b"]
+            },
+            {
+                "name": "Palos De Rosa Encofrados",
+                "description": "Escultura de concreto, alambre y tela plastificada",
+                "kind": "Escultura",
+                "author": "Oscar Machado",
+                "location": "Jardin de Capellania",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSendero%20De%20Esculturas%2FImagen%201_9.png?alt=media&token=b60e3b0d-e79b-4351-abbf-e7bd16ce2906"]
+            },
+            {
+                "name": "Utero Nocturno",
+                "description": "Escultura de alambre y plastico",
+                "kind": "Escultura",
+                "author": "Eduardo Azuaje",
+                "location": "Patio central",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSendero%20De%20Esculturas%2FImagen%201_10.png?alt=media&token=6f60ce9b-b72a-484e-913a-a57a3ed8cd49"]
+            },
+            {
+                "name": "Velocidad Cero",
+                "description": "Escultura de hierro soldado oxidado",
+                "kind": "Escultura",
+                "author": "Gabriel Azuaje",
+                "location": "Patio central",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSendero%20De%20Esculturas%2FImagen%201_11.png?alt=media&token=be4c3db3-de2e-4518-b145-0ed0a5f09d8c"]
+            },
+            {
+                "name": "Alada Penetración",
+                "description": "Escultura de aluminio soldado",
+                "kind": "Escultura",
+                "author": "Jose Manuel Da Silva",
+                "location": "Pared del edificio de la Biblioteca",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSendero%20De%20Esculturas%2FImagen%201_12.png?alt=media&token=ca1456a3-0b00-44c7-9494-f61f9fdcfce3"]
+            }
+        ],
+        "feedbacks": [
+            {
+            "avatar": "null",
+            "username": "alessandroflammia",
+            "msg": "Muy buenas obras, interesantes",
+            "stars": 5
+            },
+            {
+            "avatar": "null",
+            "username": "andresbucarello",
+            "msg": "Mucha duracion",
+            "stars": 3
+            },
+            {
+            "avatar": "null",
+            "username": "sebastiangonzales",
+            "msg": "Quisiera mas informacion de las obras",
+            "stars": 4
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "name": "Sala Mendoza",
+        "description": "El tour de la ‘Sala Mendoza’ , es una experiencia enriquecedora que permite a los visitantes apreciar una impresionante colección de obras de arte de artistas nacionales e internacionales reconocidos. El recorrido incluye tanto el ala principal de la Sala como la ala secundaria, donde se pueden apreciar obras contemporáneas y clásicas, como ‘Maquina de monedas’ de Jorge Pedro Núñez y ‘Pared I’ de Tony Vásquez Figueroa.",
+        "weekdays": "2, 5",
+        "artworks": [
+            {
+                "name": "Onda. Elección 1998",
+                "description": "Pintura de Óleo sobre tela",
+                "kind": "Pintura",
+                "author": "Alexander Apóstol",
+                "location": "Ala Principal",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSala%20Mendoza%2FImagen%202_1.png?alt=media&token=944adce2-c60c-4555-b2f1-d449b42bf97c"]
+            },
+            {
+                "name": "Serie Macuto",
+                "description": "Escultura de Acero tratado, elemento de madera encontrado",
+                "kind": "Escultura",
+                "author": "Max Pedemonte",
+                "location": "Ala Principal",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSala%20Mendoza%2FImagen%202_2.png?alt=media&token=e4773dbf-52b4-4e52-ab2e-b535fd0b4b69"]
+            },
+            {
+                "name": "Comme des Garcons",
+                "description": "Pintura de Acrílico sobre tela",
+                "kind": "Pintura",
+                "author": "Luis Salazar",
+                "location": "Ala Principal",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSala%20Mendoza%2FImagen%202_3.png?alt=media&token=4384d77d-f91c-40a5-95ab-c140f6f85925"]
+            },
+            {
+                "name": "Misceláneas, Serie Objetos flotantes",
+                "description": "Pintura de Acrílico sobre tela",
+                "kind": "Pintura",
+                "author": "Rafael Arteaga",
+                "location": "Ala Principal",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSala%20Mendoza%2FImagen%202_4.png?alt=media&token=3d3095f5-f0a0-4c9d-b065-72c87bd06342"]
+            },
+            {
+                "name": "Sin título",
+                "description": "Pintura de Acrílico sobre tela",
+                "kind": "Pintura",
+                "author": "Luis Lizardo",
+                "location": "Ala Principal",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSala%20Mendoza%2FImagen%202_5.png?alt=media&token=70383996-791e-4736-9f60-3872e7745f2a"]
+            },
+            {
+                "name": "Árbol de Silencios",
+                "description": "Pintura de Óleo sobre tela",
+                "kind": "Pintura",
+                "author": "Stone Reverón",
+                "location": "Ala Principal",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSala%20Mendoza%2FImagen%202_6.png?alt=media&token=21ccc1ef-c9da-449c-a243-e317c9ff7794"]
+            },
+            {
+                "name": "Sin título",
+                "description": "Pintura de Acrílico sobre tela",
+                "kind": "Pintura",
+                "author": "Jorge Pizzani",
+                "location": "Ala Principal",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSala%20Mendoza%2FImagen%202_7.png?alt=media&token=95708575-c53f-4a24-9a23-6ffbc62bd7ec"]
+            },
+            {
+                "name": "Flores (rosas rojas)",
+                "description": "Pintura de Acrílico sobre tela",
+                "kind": "Pintura",
+                "author": "Carlos Zerpa",
+                "location": "Ala Principal",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSala%20Mendoza%2FImagen%202_8.png?alt=media&token=9316b28a-bc1d-455b-b043-261224a6532e"]
+            },
+            {
+                "name": "Principios constructivos",
+                "description": "Escultura de Mezclas de cemento",
+                "kind": "Escultura",
+                "author": "Jonathan Lara",
+                "location": "Ala Principal",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSala%20Mendoza%2FImagen%202_9.png?alt=media&token=68713813-5216-4a7e-b98a-d92686b32c52"]
+            },
+            {
+                "name": "Figuras de los semblantes",
+                "description": "Pintura de Óleo sobre tela",
+                "kind": "Pintura",
+                "author": " Luis Arroyo",
+                "location": "Ala Principal",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSala%20Mendoza%2FImagen%202_10.png?alt=media&token=145e4c2d-0f52-4898-95db-98e29daafb43"]
+            },
+            {
+                "name": "Ojivas",
+                "description": "Pintura de Acrílico, gouache, colores, grafito y tinta china sobre madera",
+                "kind": "Pintura",
+                "author": "Mercedes Elena González",
+                "location": "Ala Principal",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSala%20Mendoza%2FImagen%202_11.png?alt=media&token=c9a7d5c4-e849-4742-b453-7d9ba50270f0"]
+            },
+            {
+                "name": "Nro. 15 Serie Flexible",
+                "description": "Sacos Bordados",
+                "kind": "Pintura",
+                "author": "Esmelyn Miranda",
+                "location": "Ala Principal",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSala%20Mendoza%2FImagen%202_12.png?alt=media&token=2eec8548-c48f-413d-b868-0f9d01c6af48"]
+            },
+            {
+                "name": "Gohonzon",
+                "description": "Pintura Acrílico sobre madera",
+                "kind": "Pintura",
+                "author": "Emilia Azcárate",
+                "location": "Ala Principal",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSala%20Mendoza%2FImagen%202_13.png?alt=media&token=d3350a1f-f815-4802-99bc-ae0576003a37"]
+            },
+            {
+                "name": "Redefined ST/3",
+                "description": "Escultura de Madera, plexiglass y resina",
+                "kind": "Escultura",
+                "author": "Tony Vásquez Figueroa",
+                "location": "Ala Principal",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSala%20Mendoza%2FImagen%202_14.png?alt=media&token=1d89c297-a8b4-4eec-a799-fed39cd69e18"]
+            },
+            {
+                "name": "Pared I",
+                "description": "Pintura de Óleo sobre tela",
+                "kind": "Pintura",
+                "author": "Génesis Alayón",
+                "location": "Ala Principal",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSala%20Mendoza%2FImagen%202_15.png?alt=media&token=237a3e82-0264-4337-9ac5-1fc5c9af202e"]
+            },
+            {
+                "name": "Bandera",
+                "description": "Pintura sobre Tela de algodón y bordado de hilo",
+                "kind": "Pintura",
+                "author": "Juan José Olavarría",
+                "location": "Ala Principal",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSala%20Mendoza%2FImagen%202_16.png?alt=media&token=5149e350-67a6-4cad-a780-2ecd511f5f0b"]
+            },
+            {
+                "name": "PurapinturabstractadrippingOriginal",
+                "description": "Pintura sobre Acrílico y óxido aplicado con tira línea sobre tela",
+                "kind": "Pintura",
+                "author": "Sigfredo Chachón",
+                "location": "Ala Principal",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSala%20Mendoza%2FImagen%202_17.png?alt=media&token=4d2d6d89-97df-4601-95ed-c940341a30fa"]
+            },
+            {
+                "name": "Lingam",
+                "description": "Yeso sobre fibra de vidrio y madera contrachapada",
+                "kind": "Escultura",
+                "author": "Jose Gabriel Fernández",
+                "location": "Ala Principal",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSala%20Mendoza%2FImagen%202_18.png?alt=media&token=ee3191a4-5c54-4ed7-9a2d-d26deb04cd0a"]
+            },
+            {
+                "name": "a239 (Mini Macuto Cannes 1)",
+                "description": "Pintura Acrílico sobre lino",
+                "kind": "Pintura",
+                "author": "Jaime Gili",
+                "location": "Ala Principal",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSala%20Mendoza%2FImagen%202_19.png?alt=media&token=3beffd2b-89f1-4e87-9fa8-55ca07e1cfa0"]
+            },
+            {
+                "name": "Mal Caribe Proyecto Maritorio",
+                "description": "Lino teñido y acolchado",
+                "kind": "Pintura",
+                "author": "Malu Valerio",
+                "location": "Ala Principal",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSala%20Mendoza%2FImagen%202_20.png?alt=media&token=8cee36b6-f757-4241-b88b-c0ae37e08063"]
+            },
+            {
+                "name": "Aeroclub, Caracas",
+                "description": "C-Print",
+                "kind": "Pintura",
+                "author": "Luis Molina-Pantin",
+                "location": "Ala Principal",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSala%20Mendoza%2FImagen%202_21.png?alt=media&token=7520c0ee-f814-4e60-9ebd-e956c2579b31"]
+            },
+            {
+                "name": "Bienvenida",
+                "description": "Pintura de Óleo sobre tela",
+                "kind": "Pintura",
+                "author": "Margot Rómer",
+                "location": "Ala Secundaria",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSala%20Mendoza%2FImagen%202_22.png?alt=media&token=b9d07f22-7f24-4ce8-88dd-896d758e9db1"]
+            },
+            {
+                "name": "Maquina de monedas",
+                "description": "Collage sobre madera, resina, monedas, pintura de esmalte",
+                "kind": "Pintura",
+                "author": "Jorge Pedro Núñez",
+                "location": "Ala Secundaria",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSala%20Mendoza%2FImagen%202_23.png?alt=media&token=844b0e81-11c2-4837-84e3-1de608dba984"]
+            },
+            {
+                "name": "Entre las Ruinas Salvajes",
+                "description": "Escaner, impresión fotográfica sobre papel",
+                "kind": "Pintura",
+                "author": "Leonardo Almao",
+                "location": "Ala Secundaria",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSala%20Mendoza%2FImagen%202_24.png?alt=media&token=3d51c0b1-8dcb-46ee-87ab-f4c279fea5ec"]
+            },
+            {
+                "name": "Nube",
+                "description": "Escultura collage",
+                "kind": "Escultura",
+                "author": "Leonardo Nieves",
+                "location": "Ala Secundaria",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSala%20Mendoza%2FImagen%202_25.png?alt=media&token=ca5ddb34-850f-46ab-8f53-49f81f078b0f"]
+            },
+            {
+                "name": "Pintura para pared",
+                "description": "Pintura sobre madera",
+                "kind": "Pintura",
+                "author": "Angel Leiva",
+                "location": "Ala Secundaria",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSala%20Mendoza%2FImagen%202_26.png?alt=media&token=7da6e7c8-ce82-44d4-b424-b4d4f3846659"]
+            },
+            {
+                "name": "Sin Titulo",
+                "description": "Grafito sobre papel",
+                "kind": "Pintura",
+                "author": "William Stone Reverón",
+                "location": "Ala Secundaria",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSala%20Mendoza%2FImagen%202_27.png?alt=media&token=714681af-2835-43a7-a688-f1e043dc32e7"]
+            },
+            {
+                "name": "Rainbow Montains 900",
+                "description": "Pintura de Óleo sobre papel",
+                "kind": "Pintura",
+                "author": "Mariana Bunimov",
+                "location": "Ala Secundaria",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSala%20Mendoza%2FImagen%202_28.png?alt=media&token=9dfb051d-c0e6-4160-b3f6-5eb1af70d7e1"]
+            },
+            {
+                "name": "M1 afluencias",
+                "description": "Manga de polietileno, papel y madera, nylon y botones plásticos",
+                "kind": "Pintura",
+                "author": "Isabel Cisneros",
+                "location": "Ala Secundaria",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSala%20Mendoza%2FImagen%202_29.png?alt=media&token=58ed4bca-7d39-49e3-9e8d-057fa393840b"]
+            },
+            {
+                "name": "The Future of Oil",
+                "description": "Fotografía",
+                "kind": "Pintura",
+                "author": "Ana Alenso",
+                "location": "Ala Secundaria",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSala%20Mendoza%2FImagen%202_30.png?alt=media&token=d5ef4324-604c-433e-834f-92bff3dd143f"]
+            },
+            {
+                "name": "La negritud en Venezuela 1991",
+                "description": "Collage sobre papel",
+                "kind": "Pintura",
+                "author": "Manuel Eduardo González",
+                "location": "Ala Secundaria",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FSala%20Mendoza%2FImagen%202_31.png?alt=media&token=b59bad8a-3695-4332-8ba6-07b647b67f08"]
+            }
+        ],
+        "feedbacks": [
+            {
+                "avatar": "null",
+                "username": "andresbucarello",
+                "msg": "Muy buena la Sala, perfectas condiciones",
+                "stars": 5
+            },
+            {
+                "avatar": "null",
+                "username": "sebastiangonzales",
+                "msg": "Hace mucho frio en la sala",
+                "stars": 3
+            },
+            {
+                "avatar": "null",
+                "username": "alexialeon",
+                "msg": "Quisiera mas informacion de las obras",
+                "stars": 4
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Biblioteca Pedro Grases",
+        "description": "El tour por las obras de arte de la Biblioteca Pedro Grases es una experiencia única para aquellos interesados en el arte y la cultura, y una oportunidad para conocer y apreciar obras de artistas reconocidos de Venezuela y Latinoamérica en un ambiente académico y cultural. Podran ver obras como la Escultura Premio Principe de Asturias de las Letras de Joan Miro y muchas mas!.",
+        "weekdays": "0, 3",
+        "artworks": [
+            {
+                "name": "Retrato de Doña Laura Singre de Schlageter",
+                "description": "Pintura de Óleo sobre tela",
+                "kind": "Pintura",
+                "author": "Antonio Herrera Toro",
+                "location": "Sala Humanistica",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FBiblioteca%20Pedro%20Grases%2FImagen%203_1.png?alt=media&token=53ce4b53-a265-470b-88ae-cba3fbef224d"]
+            },
+            {
+                "name": "Serie Guri",
+                "description": "Materiales diversos sobre madera",
+                "kind": "Escultura",
+                "author": "Luisa Cristina Riquezes",
+                "location": "Celaup",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FBiblioteca%20Pedro%20Grases%2FImagen%203_2.png?alt=media&token=fec57300-8422-4fee-b325-4eef2d6b8485"]
+            },
+            {
+                "name": "En La Mira del Verdugo",
+                "description": "Pintura con lapiz sobre papel",
+                "kind": "Pintura",
+                "author": "Luis Dominguez Salazar",
+                "location": "Celaup",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FBiblioteca%20Pedro%20Grases%2FImagen%203_3.png?alt=media&token=8e4dfc96-a67e-4230-9f87-52cb06701e70"]
+            },
+            {
+                "name": "Desayuno con Miranda",
+                "description": "Pintura con lapiz sobre papel",
+                "kind": "Pintura",
+                "author": "Luis Dominguez Salazar",
+                "location": "Celaup",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FBiblioteca%20Pedro%20Grases%2FImagen%203_4.png?alt=media&token=1b4f5f32-6438-40fb-9c83-1cfeeefe0f3a"]
+            },
+            {
+                "name": "Miranda y la conspiracion del silencio",
+                "description": "Pintura de lapiz sobre papel",
+                "kind": "Pintura",
+                "author": "Luis Dominguez Salazar",
+                "location": "Celaup",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FBiblioteca%20Pedro%20Grases%2FImagen%203_5.png?alt=media&token=2f52f406-405c-4924-8630-5dc5a9359ac3"]
+            },
+            {
+                "name": "Mi gente",
+                "description": "Pintura de Óleo sobre tela",
+                "kind": "Pintura",
+                "author": "Balthazar Armas",
+                "location": "Laboratorios de Computadoras de la Biblioteca",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FBiblioteca%20Pedro%20Grases%2FImagen%203_6.png?alt=media&token=2b092048-c4e7-4633-925a-87f8adbde65f"]
+            },
+            {
+                "name": "Gato 1981",
+                "description": "Pintura de Óleo sobre tela",
+                "kind": "Pintura",
+                "author": "Fernando Botero",
+                "location": "Laboratorios de Computadoras de la Biblioteca",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FBiblioteca%20Pedro%20Grases%2FImagen%203_7.png?alt=media&token=d4f67941-d1e2-4cf2-b2e6-cc89ed889209"]
+            },
+            {
+                "name": "Retrato de Valenin Espinal",
+                "description": "Pintura de Óleo sobre tela",
+                "kind": "Pintura",
+                "author": "Emilia Firgau",
+                "location": "Sala Humanistica",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FBiblioteca%20Pedro%20Grases%2FImagen%203_8.png?alt=media&token=57aac4ab-b779-4181-a7f8-e92a54777f21"]
+            },
+            {
+                "name": "Escultura Premio Principe de Asturias de la Letras",
+                "description": "Escultura de bronce con patina marron y pulido",
+                "kind": "Escultura",
+                "author": "Joan Miro",
+                "location": "Celaup",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FBiblioteca%20Pedro%20Grases%2FImagen%203_9.png?alt=media&token=88d47f80-105d-4edd-8ab8-1490bb8f8c10"]
+            },
+            {
+                "name": "Recepcion",
+                "description": "Pintura de Óleo sobre tela",
+                "kind": "Pintura",
+                "author": "Edson Motta",
+                "location": "Recepcion",
+                "imageUrls": ["https://firebasestorage.googleapis.com/v0/b/metroart-d9c81.appspot.com/o/Imagenes%20Obras%2FBiblioteca%20Pedro%20Grases%2FImagen%203_10.png?alt=media&token=dc886cef-752f-49d3-be08-11f7f81d0376"]
+            }
+        ],
+        "feedbacks": [
+            {
+                "avatar": "null",
+                "username": "andresbucarello",
+                "msg": "Muy buena la Sala, perfectas condiciones",
+                "stars": 5
+            },
+            {
+                "avatar": "null",
+                "username": "sebastiangonzales",
+                "msg": "Hace mucho frio en la sala",
+                "stars": 3
+            },
+            {
+                "avatar": "null",
+                "username": "alexialeon",
+                "msg": "Quisiera mas informacion de las obras",
+                "stars": 4
+            }
+        ]
+    }
+  ]
+}

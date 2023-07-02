@@ -8,7 +8,7 @@ export const TourCard = ({ tour }: { tour: ITour }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    setAverage(calculateStars(tour.feedback));
+    setAverage(calculateStars(tour.feedbacks));
   });
 
   const handleOnClick = (e: any) => {
@@ -21,7 +21,7 @@ export const TourCard = ({ tour }: { tour: ITour }) => {
       onClick={handleOnClick}
       className="flex w-full rounded-2xl bg-[#F77F00] max-w-6xl h-[15rem] overflow-clip text-white tour-transitions text-left"
     >
-      <img className="w-56" src={tour.artworks[0].imagesUrl[0]} />
+      <img className="w-56" src={tour.artworks[0].imageUrls[0]} />
       <div className="p-6 overflow-scroll">
         <h1 className="font-bold text-2xl mb-2">{tour.name}</h1>
         <h1 className="font-medium">{tour.description}</h1>

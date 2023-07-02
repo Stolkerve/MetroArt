@@ -1,12 +1,12 @@
 import { IArtWork } from "./IArtWork";
 
 export interface ITour {
-  id: string;
+  id: number;
   name: string;
   description: string;
-  weekdays: number[];
+  weekdays: string;
   artworks: IArtWork[];
-  feedback: {
+  feedbacks: {
     msg: string;
     stars: number;
   }[];

@@ -80,10 +80,17 @@ export function Profile() {
 
   return (
     <div className="mt-14 max-w-full w-full h-full flex flex-col justify-center items-center">
-        <div className="mt-5 justify-center w-[200px] h-[200px] rounded-full bg-[#F77F00] mb-4 drop-shadow-sm">
+        
+      {!isLoadingUser ? (
+        
+
+        <form className="flex flex-col" >
+        <h1 className="text-center text-white text-4xl mb-10 font-semibold">Modificar tu perfil</h1>
+
+        <div className="mt-5 justify-center self-center w-[200px] h-[200px] rounded-full bg-[#F77F00] mb-4 drop-shadow-sm">
           <img className="h-full w-full rounded-full border-[#F77F00] border" src={profilePicture} alt="" />
         </div>
-        <label>
+        <label className="self-center">
               <input type="file" onChange={handleFileChange} className="mb-6 p-2 text-sm text-grey-500
               file:mr-5 file:py-1 file:px-4
               file:rounded-full file:border-0
@@ -96,12 +103,6 @@ export function Profile() {
           </label>
        
         <div className="text-center text-white text-4xl mb-20 font-semibold drop-shadow-sm">{user.username}</div>
-      {!isLoadingUser ? (
-        
-
-        <form className="flex flex-col" >
-        <h1 className="text-center text-white text-4xl mb-10 font-semibold">Modificar tu perfil</h1>
-
         {/*Name*/}
         <div className="">
           <label className="inputLabel" htmlFor="name">
