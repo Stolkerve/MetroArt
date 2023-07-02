@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import campusBackground from "../assets/campus.jpg";
 import { useNavigate, useParams } from "react-router-dom";
-import db from "../db.json";
+import toursInfo from "../json/toursInfo.json";
 import { ITour } from "../models/ITour";
 import { ArtWorkCard } from "../components/ArtWorkCard";
 import { calculateStars } from "../constants/tools";
@@ -39,8 +39,8 @@ export const Tour = () => {
     (async () => {
       // Revisar si ya la tengo reservado
       if (id != undefined) {
-        const tour: ITour = db.tours[Number.parseInt(id)];
-        setAverage(calculateStars(tour.feedback));
+        const tour: ITour = toursInfo.tours[Number.parseInt(id)];
+        setAverage(calculateStars(tour.feedbacks));
         setTour(tour);
       }
     })();
@@ -59,7 +59,7 @@ export const Tour = () => {
     if (isLogin) {
       openModal()
     }
-    navigate("/login")
+    navigate(`/reserve/${tour?.id}`)
   }
 
   const handleBackHome = () => {
@@ -67,7 +67,6 @@ export const Tour = () => {
     if (isLogin) {
       navigate("/dashboard")
     }
-    navigate("/")
   }
 
   return (
@@ -114,7 +113,7 @@ export const Tour = () => {
         </div>
         <img
           className="rounded-2xl max-w-4xl w-auto"
-          src={campusBackground}
+          src={tour?.artworks[0].imageUrls[0]}
           style={{ boxShadow: "8px 8px 0px 0px #1D3557" }}
         />
 
@@ -145,7 +144,7 @@ export const Tour = () => {
         >
           Feedbacks
         </h1>
-        {tour?.feedback.map((a) => {
+        {tour?.feedbacks.map((a) => {
           return <div>{a.msg}</div>;
         })}
       </div>
