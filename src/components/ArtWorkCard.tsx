@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import campusBackground from "../assets/campus.jpg";
 import { IArtWork } from "../models/IArtWork";
 
 export const ArtWorkCard = ({ artwork }: { artwork: IArtWork }) => {

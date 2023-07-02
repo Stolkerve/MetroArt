@@ -1,8 +1,6 @@
-import campusBackground from "../assets/campus.jpg";
 import { TourCard } from "../components/TourCard";
 import toursInfo from "../json/toursInfo.json";
 import { useEffect, useState } from "react";
-import { ITour } from "../models/ITour";
 
 export const Dashboard = () => {
 
