@@ -41,7 +41,7 @@ body {
 
 @layer components {
   .inputLabel {
-    @apply block text-white font-semibold text-sm pb-2;
+    @apply block text-white font-semibold text-sm pb-2 mt-4;
   }
 
   .input {

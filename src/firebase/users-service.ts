@@ -10,6 +10,8 @@ import {
   where,
 } from "firebase/firestore";
 import { db } from "./client";
+import { getAuth, updateEmail } from "firebase/auth";
+import { User } from "../models/IUser";
 
 export const usersCollection = "users";
 
@@ -70,4 +72,21 @@ export async function getUserProfile(email: string) {
   }
 
   return null;
+}
+
+export async function updateUser(uid: string, userInfo: User) {
+  const auth = await getAuth();
+  const currentUser = auth.currentUser;
+  const userDocRef = doc(db, "users", uid);
+
+  if (userInfo.email && currentUser && userInfo.email !== currentUser.email ) {
+    // If the user has updated their email, update it in Firebase Authentication as well
+    await updateEmail(currentUser, userInfo.email);
+  }
+
+  await updateDoc(userDocRef, {
+    "username": userInfo.username,
+    "email": userInfo.email,
+    "phone": userInfo.phone});
+
 }

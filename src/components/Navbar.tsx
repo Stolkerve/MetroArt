@@ -2,7 +2,11 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { homeURL,
     profileURL,
-    dashboardURL } from "../constants/urls";
+    dashboardURL, 
+    tourURL,
+    reserveURL,
+    userReservesURL,
+    toursURL} from "../constants/urls";
 
 import { logout } from "../firebase/auth-service";
 import { UserContext, useUser } from "../contexts/UserContext";
@@ -47,12 +51,12 @@ export function Navbar() {
                 </Link>
               </li>
               <li className="rounded-md hover:scale-105">
-                <Link to={dashboardURL}>
+                <Link to={toursURL}>
                   <span>Tours</span>
                 </Link>
               </li>
               <li className="mb-4 rounded-md hover:scale-105">
-                <Link to={dashboardURL}>
+                <Link to={userReservesURL}>
                   <span>Reservaciones</span>
                 </Link>
               </li>
