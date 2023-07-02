@@ -2,10 +2,16 @@ import { onAuthStateChanged } from "firebase/auth";
 import React, { ReactNode, useContext, useEffect, useState } from "react";
 import { auth } from "../firebase/client";
 import { getUserProfile } from "../firebase/users-service";
-
+import { User } from "../models/IUser";
 export const UserContext = React.createContext({});
 
-export function UserContextProvider({ children }: { children: ReactNode }) {
+export interface UserContext extends ReturnType<typeof useUser> {
+  user: User;
+  isLoadingUser: boolean;
+
+}
+
+export function UserContextProvider({ children }: any) {
   const [user, setUser] = useState<any>(null);
   const [isLoadingUser, setIsLoadingUser] = useState(true);
 

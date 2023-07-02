@@ -10,6 +10,7 @@ import { auth } from "./client";
 import { createUser } from "./users-service";
 import { FacebookAuthProvider } from "firebase/auth/cordova";
 
+
 export const loginWithProvider = async (provider: GoogleAuthProvider | FacebookAuthProvider) => {
   const result = await signInWithPopup(auth, provider);
   const newUser = getAdditionalUserInfo(result)?.isNewUser;
@@ -22,6 +23,7 @@ export const loginWithProvider = async (provider: GoogleAuthProvider | FacebookA
       username: displayName,
       phone: phoneNumber,
     });
+
   }
 };
 

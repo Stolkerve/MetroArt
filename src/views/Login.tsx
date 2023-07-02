@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { registerURL } from "../constants/urls";
+import { dashboardURL, registerURL } from "../constants/urls";
 import { useState } from "react";
 import { emailPasswordLogin } from "../firebase/auth-service";
 import { AuthFormLayout } from "../components/AuthFormLayout";
@@ -17,11 +17,13 @@ export function Login() {
     setLoading(true);
     console.log(email, password);
     try {
-      // emailPasswordLogin(email, password)
-      // navigate("/dashboard");
+      emailPasswordLogin(email, password)
+      console.log("exito")
+      navigate(dashboardURL);
+      console.log("tamo en dashboard");
     } catch (e: any) {
       setLoading(false);
-      setErrMsg("Ocurro un error...");
+      setErrMsg("Ocurrio un error...");
 
       // const errorCode = error.code;
       // const errorMessage = error.message;

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { AuthFormLayout } from "../components/AuthFormLayout";
 import { IRegisterForm } from "../models/IRegisterForm";
 import { Link, useNavigate } from "react-router-dom";
-import { loginURL } from "../constants/urls";
+import { dashboardURL, loginURL } from "../constants/urls";
 import { emailPasswordRegister } from "../firebase/auth-service";
 
 export function Register() {
@@ -30,8 +30,8 @@ export function Register() {
 
     console.log(email, password, username, phone);
     try {
-      // await emailPasswordRegister(email, password, username, phone)
-      // navigate("/dashboard")
+      await emailPasswordRegister(email, password, username, phone)
+      navigate(dashboardURL)
     } catch (e: any) {
       setLoading(false);
       setErrMsg("Error creando usuario...");
