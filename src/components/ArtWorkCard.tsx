@@ -18,11 +18,11 @@ export const ArtWorkCard = ({ artwork }: { artwork: IArtWork }) => {
 
   return (
     <div className="flex w-full rounded-2xl bg-[#F77F00] max-w-6xl h-[14.11rem] overflow-clip text-white tour-transitions active:scale-100 hover:cursor-default">
-      <img className="w-56" src={campusBackground} />
-      <div className="p-6 flex flex-col overflow-scroll">
+      <img className="w-56" src={artwork.imageUrls[0]} />
+      <div className="p-6 flex flex-col w-full overflow-scroll">
         <h1 className="font-bold text-2xl">{artwork.name}</h1>
         <h1 className="mb-auto font-medium">{artwork.description}</h1>
-        <div className="flex gap-2 font-medium">
+        <div className="flex flex-col gap-1 font-medium">
           <p>Autor: {artwork.author}.</p>
           <p>Tipo: {artwork.kind}.</p>
           <p>Ubicacion: {artwork.location}.</p>

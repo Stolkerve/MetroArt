@@ -5,7 +5,7 @@ import { LineWave } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom";
 import { loginURL, registerURL } from "../constants/urls";
 import { TourCard } from "../components/TourCard";
-import db from "../db.json";
+import toursInfo from "../json/toursInfo.json";
 import { ITour } from "../models/ITour";
 
 export default function Landing() {
@@ -197,7 +197,7 @@ export default function Landing() {
             </Zoom>
           ) : (
             <Zoom cascade duration={150} direction="up" triggerOnce className="flex justify-center">
-              {db.tours.map((t: ITour) => {
+              {toursInfo.tours.map((t: ITour) => {
                 return <TourCard tour={t} />;
               })}
             </Zoom>
