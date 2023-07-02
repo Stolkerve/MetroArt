@@ -4,6 +4,9 @@ import { Login } from "./views/Login";
 import { homeURL, loginURL, registerURL, tourURL } from "./constants/urls";
 import { Register } from "./views/Register";
 import { Tour } from "./views/Tour";
+import Modal from 'react-modal';
+
+Modal.setAppElement('#root');
 
 export const App = () => {
   return (

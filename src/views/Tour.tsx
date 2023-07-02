@@ -6,17 +6,38 @@ import { ITour } from "../models/ITour";
 import { ArtWorkCard } from "../components/ArtWorkCard";
 import { calculateStars } from "../constants/tools";
 import { FaHome } from "react-icons/fa";
+import Modal from 'react-modal';
+import { ReserveModal } from "../components/ReserveModal";
+
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    backgroundColor: "#1D3557"
+  },
+  overlay: {
+    backgroundColor: '#000000AA',
+    zIndex: 20
+  },
+};
 
 export const Tour = () => {
   const weekdays = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes"];
 
   const [average, setAverage] = useState(0);
   const [tour, setTour] = useState<ITour | null>(null);
+  const [modalIsOpen, setIsOpen] = useState(false);
+
   let { id } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
     (async () => {
+      // Revisar si ya la tengo reservado
       if (id != undefined) {
         const tour: ITour = db.tours[Number.parseInt(id)];
         setAverage(calculateStars(tour.feedback));
@@ -25,15 +46,48 @@ export const Tour = () => {
     })();
   }, []);
 
+  const openModal = () => {
+    setIsOpen(true);
+  }
+
+  const closeModal = () => {
+    setIsOpen(false);
+  }
+
+  const handleReserve = () => {
+    const isLogin = true
+    if (isLogin) {
+      openModal()
+    }
+    navigate("/login")
+  }
+
+  const handleBackHome = () => {
+    const isLogin = true
+    if (isLogin) {
+      navigate("/dashboard")
+    }
+    navigate("/")
+  }
+
   return (
     <div className="">
+      <Modal
+        isOpen={modalIsOpen}
+        style={customStyles}
+        onRequestClose={closeModal}
+        contentLabel="Example Modal"
+      >
+        <ReserveModal tour={tour!} closeModal={closeModal}/>
+      </Modal>
+
       <button
         className="absolute rounded-full p-2 bg-white text-[#F77F00] text-2xl m-3 z-10"
-        onClick={() => navigate("/")}
+        onClick={handleBackHome}
       >
         <FaHome />
       </button>
-      <div className="p-10 pb-24 flex h-fit relative">
+      <div className="p-10 pb-24 flex flex-wrap justify-center gap-8 h-fit relative">
         <div
           className="m-auto flex flex-col justify-center items-center rounded-lg p-6 bg-white text-stone-900 max-w-lg space-y-6 text-center "
           style={{ boxShadow: "-8px 8px 0px 0px #1D3557" }}
@@ -45,15 +99,7 @@ export const Tour = () => {
             {tour?.name}
           </h1>
           <p className="text-lg max-h-96 overflow-scroll text-left">{tour?.description}</p>
-          <button className="w-40 p-4 btn-primary hover:bg-[#ff890a]">Reservar</button>
-          <div className="flex gap-2 font-medium">
-            <p>Dias disponibles: </p>
-            {tour?.weekdays
-              .map((i) => weekdays[i])
-              .toString()
-              .replaceAll(",", ", ")}
-            .
-          </div>
+          <button className="w-40 p-4 btn-primary hover:bg-[#ff890a]" onClick={handleReserve}>Reservar</button>
           <div className="h-full flex justify-center items-center space-x-2 fill-yellow-400">
             {Array.from(Array(average).keys()).map(() => {
               return (
@@ -67,7 +113,7 @@ export const Tour = () => {
           </div>
         </div>
         <img
-          className="rounded-2xl max-w-4xl"
+          className="rounded-2xl max-w-4xl w-auto"
           src={campusBackground}
           style={{ boxShadow: "8px 8px 0px 0px #1D3557" }}
         />
