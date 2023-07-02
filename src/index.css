@@ -17,11 +17,23 @@ body {
 
 .tour-transitions:hover {
   box-shadow: 0px 0px 0px 0px white;
-  transform: scale(99%);
 }
 
 .tour-transitions:active {
   transform: scale(98.5%);
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open{
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close{
+  opacity: 0;
 }
 
 @layer base {
@@ -37,10 +49,11 @@ body {
   }
 
   .btn-primary {
-    @apply bg-[#F77F00] px-6 py-4 w-60 rounded-lg font-bold disabled:bg-orange-400;
+    @apply bg-[#F77F00] px-6 py-4 w-60 rounded-lg font-bold border-[#1D3557] border-2 disabled:bg-orange-400;
   }
 
   .btn-secondary {
     @apply transition duration-100 border-2 border-white rounded p-4 font-semibold mt-2 disabled:bg-slate-600;
   }
+
 }
