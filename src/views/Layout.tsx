@@ -6,7 +6,7 @@ import banner from '../assets/banner.png';
 export function Layout() {
   return (
     <UserContextProvider>
-      <main className="flex flex-row min-h-screen h-full min-w-screen">
+      <main className="flex flex-row min-h-screen h-full min-w-screen ">
         <Navbar />
         <div className="flex flex-col min-h-screen h-full min-w-screen">
           <img className='w-screen h-32' src={banner}/>

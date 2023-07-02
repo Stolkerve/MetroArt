@@ -3,10 +3,8 @@ import { useState, useEffect } from "react";
 import { homeURL,
     profileURL,
     dashboardURL, 
-    tourURL,
-    reserveURL,
     userReservesURL,
-    toursURL} from "../constants/urls";
+} from "../constants/urls";
 
 import { logout } from "../firebase/auth-service";
 import { UserContext, useUser } from "../contexts/UserContext";

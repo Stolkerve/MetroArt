@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Landing from "./views/Landing";
 import { Login } from "./views/Login";
-import { dashboardURL, homeURL, loginURL, profileURL, registerURL, tourURL } from "./constants/urls";
+import { dashboardURL, homeURL, loginURL, profileURL, registerURL, tourURL, userReservesURL } from "./constants/urls";
 import { Register } from "./views/Register";
 import { Tour } from "./views/Tour";
 import Modal from 'react-modal';
@@ -9,6 +9,7 @@ import { Layout } from "./views/Layout";
 import { Dashboard } from "./views/Dashboard";
 import { Profile } from "./views/Profile";
 import { PrivateRoute } from "./components/PrivateRoute";
+import { UserReserves }  from "./views/UserReserves";
 
 Modal.setAppElement('#root');
 
@@ -35,6 +36,12 @@ export const App = () => {
           <Route path={tourURL} element={
           <PrivateRoute>
             <Tour />
+          </PrivateRoute>
+          } />
+
+          <Route path={userReservesURL} element={
+          <PrivateRoute>
+            <UserReserves />
           </PrivateRoute>
           } />
         </Route>
