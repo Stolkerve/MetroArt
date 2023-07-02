@@ -65,12 +65,13 @@ export default function Landing() {
                 </h1>
               </div>
               <p className="text-lg">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt mollit anim id est laborum.
+              MetroArt es un proyecto que funciona como una galería de arte
+              virtual y permita a los usuarios reservar tours para recorrer 
+              y admirar las obras de arte presentes en la Universidad Metropolitana.
+              El proyecto está dirigido a los amantes del arte, los estudiantes
+              universitarios, el propio personal de la universidad, la Dirección
+              de Cultura, la Biblioteca, la Sala Mendoza y cualquier persona
+              interesada en la cultura y el arte.
               </p>
               <div className="flex flex-col items-center text-white border-collapse font-semibold">
                 <button
@@ -119,12 +120,13 @@ export default function Landing() {
                   </h1>
                 </div>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                  officia deserunt mollit anim id est laborum.
+                Con MetroArt, los usuarios podrán disfrutar de una experiencia
+                única, descubrir la riqueza artística de la universidad, 
+                programar sus visitas y conocer más sobre las obras y sus 
+                autores. La plataforma también permitirá a los usuarios 
+                compartir sus opiniones, impresiones y reseñas, fomentando 
+                la creación de una comunidad virtual de arte y cultura; así como 
+                la difusión del arte presente en la universidad.
                 </p>
               </div>
               <div className="max-w-md space-y-4">
@@ -134,12 +136,14 @@ export default function Landing() {
                   </h1>
                 </div>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                  officia deserunt mollit anim id est laborum.
+                Nuestro objetivo es hacer que el arte sea más accesible y cercano a 
+                todos los usuarios, independientemente de su nivel 
+                de conocimiento o experiencia en el arte. La plataforma 
+                se convertirá en un canal clave para la difusión de la cultura,
+                un espacio que combine la tecnología con la creatividad, y que
+                promueva el conocimiento y la apreciación del arte en la 
+                comunidad universitaria y en el público en general.
+
                 </p>
               </div>
             </div>

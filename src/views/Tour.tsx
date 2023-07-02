@@ -8,6 +8,20 @@ import { FaHome } from "react-icons/fa";
 import Modal from 'react-modal';
 import { ReserveModal } from "../components/ReserveModal";
 
+const FeedbackCard = ({ feedback }) => {
+  return (
+    <div className="flex items-center">
+      <div className="w-10 h-10 bg-gray-200 rounded-full flex-shrink-0"></div>
+      <div className="ml-4">
+        <p className="text-white">{feedback.username}</p>
+        <p className="text-gray-300">{feedback.msg}</p>
+      </div>
+    </div>
+  );
+};
+export default FeedbackCard;
+
+
 const customStyles = {
   content: {
     top: '50%',
@@ -143,8 +157,12 @@ export const Tour = () => {
         >
           Feedbacks
         </h1>
-        {tour?.feedbacks.map((a) => {
-          return <div>{a.msg}</div>;
+        {tour?.feedbacks.map((feedback) => {
+          return (
+            <div key={feedback.id}>
+              <FeedbackCard feedback={feedback} />
+            </div>
+          );
         })}
       </div>
     </div>
