@@ -12,6 +12,7 @@ import {
 import { db } from "./client";
 import { getAuth, updateEmail } from "firebase/auth";
 import { User } from "../models/IUser";
+import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 
 export const usersCollection = "users";
 
@@ -89,4 +90,47 @@ export async function updateUser(uid: string, userInfo: User) {
     "email": userInfo.email,
     "phone": userInfo.phone});
 
+}
+
+export async function getProfilePicture(userId: string): Promise<string> {
+  try {
+    // Obtener una referencia al servicio de almacenamiento de Firebase
+    const storage = getStorage();
+
+    // Obtener una referencia a la foto de perfil del usuario en el almacenamiento
+    const storageRef = ref(storage, `users/${userId}/profilePicture`);
+
+    // Obtener la URL de descarga de la foto de perfil
+    const downloadURL = await getDownloadURL(storageRef);
+
+    // Devolver la URL de descarga de la foto de perfil
+    return downloadURL;
+  } catch (error) {
+    console.error("Error al obtener la foto de perfil:", error);
+    throw error;
+  }
+}
+
+export async function updateProfilePicture(userId: string, file: File): Promise<string> {
+  try {
+    // Get a reference to the storage service
+    const storage = getStorage();
+
+    // Create a reference to the user's profile picture in storage
+    const storageRef = ref(storage, `users/${userId}/profilePicture`);
+
+    // Upload the new profile picture file to storage
+    await uploadBytes(storageRef, file);
+
+    // Get the download URL for the new profile picture
+    const downloadURL = await getDownloadURL(storageRef);
+
+    // TODO: Update the user's profile picture URL in your database
+
+    // Return the download URL for the new profile picture
+    return downloadURL;
+  } catch (error) {
+    console.error("Error updating profile picture:", error);
+    throw error;
+  }
 }

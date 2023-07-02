@@ -1,8 +1,10 @@
 
 import { LineWave } from "react-loader-spinner";
 import { UserContext, useUser } from "../contexts/UserContext";
-import { useState } from "react";
-import { updateUser } from "../firebase/users-service";
+import { ChangeEvent, useState, useEffect } from "react";
+import { getProfilePicture, updateProfilePicture, updateUser } from "../firebase/users-service";
+import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
+import { updateProfile } from "firebase/auth";
 
 export function Profile() {
     const { user, isLoadingUser } = useUser() as UserContext;
@@ -11,7 +13,20 @@ export function Profile() {
       username: "",
       email: "",
       phone: "",
-    });
+    })
+    
+    const [file, setFile] = useState<File | undefined>(undefined);
+    const [profilePicture, setProfilePicture] = useState("");
+
+
+    
+
+    const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
+      const selectedFile = event.target.files?.[0];
+
+      setFile(selectedFile);
+  
+    }
 
     const whenChange = (event: any) => {
         const {name, value} = event.target;
@@ -22,11 +37,19 @@ export function Profile() {
         }));
       }
     
+    async function fetchProfilePicture() {
+        try {
+          const downloadURL = await getProfilePicture(user.id);
+          setProfilePicture(downloadURL);
+        } catch (error) {
+          console.error("Error al obtener la foto de perfil:", error);
+        }
+      }  
+    
     const handleSubmit = async (event: any) => {
       event.preventDefault();
-      console.log(formData)
-      console.log("entro")
-      console.log(user.id)
+      
+  
       if (formData.email == "") {
         formData.email = user.email
       }
@@ -40,14 +63,38 @@ export function Profile() {
       
       }
 
+      if (file !== undefined) {
+        updateProfilePicture(user.id, file); // actualizar la variable profilePicture en el estado
+      }
+
       console.log(formData);
       await updateUser(user.id, formData);
       window.alert("Información guardada exitosamente!")
     }
 
+    useEffect(() => {
+      fetchProfilePicture() 
+      console.log(profilePicture)
+    }, [handleSubmit])
+      
+
   return (
     <div className="mt-14 max-w-full w-full h-full flex flex-col justify-center items-center">
-        <div className="mt-5 content-none justify-center w-[200px] h-[200px] rounded-full bg-[#F77F00] mb-4 drop-shadow-sm"></div>
+        <div className="mt-5 justify-center w-[200px] h-[200px] rounded-full bg-[#F77F00] mb-4 drop-shadow-sm">
+          <img className="h-full w-full rounded-full border-[#F77F00] border" src={profilePicture} alt="" />
+        </div>
+        <label>
+              <input type="file" onChange={handleFileChange} className="mb-6 p-2 text-sm text-grey-500
+              file:mr-5 file:py-1 file:px-4
+              file:rounded-full file:border-0
+              file:text-sm file:font-medium
+              file:bg-white file:text-[#F77F00]
+              hover:file:cursor-pointer
+              hover:file:scale-[1.03]
+              
+            " />
+          </label>
+       
         <div className="text-center text-white text-4xl mb-20 font-semibold drop-shadow-sm">{user.username}</div>
       {!isLoadingUser ? (
         
