@@ -3,14 +3,13 @@ import { useState, useEffect } from "react";
 import { homeURL,
     profileURL,
     dashboardURL, 
-    tourURL,
-    reserveURL,
     userReservesURL,
-    toursURL} from "../constants/urls";
+} from "../constants/urls";
 
 import { logout } from "../firebase/auth-service";
 import { UserContext, useUser } from "../contexts/UserContext";
 import { getProfilePicture } from "../firebase/users-service";
+import defaultIcon from "../assets/userIcon.png"
 
 export function Navbar() {
   const navigate = useNavigate();
@@ -66,10 +65,16 @@ export function Navbar() {
             <>
               <Link to={profileURL}>
                 <li className="rounded-md hover:scale-105">
-                  <div className="mt-5 justify-center w-[80px] h-[80px] rounded-full bg-[#F77F00] mb-4 drop-shadow-sm">
-                  <img className="h-full w-full rounded-full border-white border" src={profilePicture} alt="" />
-                  </div>
-                    
+                  {profilePicture == "" ? (
+                    <div className="mt-5 justify-center w-[80px] h-[80px] rounded-full bg-[#F77F00] mb-4 drop-shadow-sm">
+                    <img className="h-full w-full rounded-full border-white border" src={defaultIcon} alt="" />
+                    </div>
+                  ): (
+                    <div className="mt-5 justify-center w-[80px] h-[80px] rounded-full bg-[#F77F00] mb-4 drop-shadow-sm">
+                    <img className="h-full w-full rounded-full border-white border" src={profilePicture} alt="" />
+                    </div>
+                  )}
+                  
                     <span>{displayName(user.username)}</span>  
                 </li>
               </Link>

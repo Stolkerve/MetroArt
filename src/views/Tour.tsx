@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import campusBackground from "../assets/campus.jpg";
 import { useNavigate, useParams } from "react-router-dom";
 import toursInfo from "../json/toursInfo.json";
 import { ITour } from "../models/ITour";
