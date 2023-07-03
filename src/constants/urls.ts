@@ -11,3 +11,4 @@ export const toursURL: string = "/tours";
 export const adminToursURL: string = "/admin/gestionar_tours";
 export const adminUsersURL: string = "/admin/gestionar_usuarios";
 export const adminCreateURL: string = "/admin/crear_tours";
+export const calendarURL: string = "/calendario";
