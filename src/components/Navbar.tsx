@@ -12,7 +12,6 @@ import { logout } from "../firebase/auth-service";
 import { UserContext, useUser } from "../contexts/UserContext";
 import { getProfilePicture } from "../firebase/users-service";
 import defaultIcon from "../assets/userIcon.png"
-import Calendar from "react-calendar";
 
 export function Navbar() {
   const navigate = useNavigate();

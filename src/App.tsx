@@ -47,6 +47,13 @@ export const App = () => {
             <UserReserves />
           </PrivateRoute>
           } />
+          
+          <Route path={adminURL} element={
+          <AdminRoute>
+            <Admin />
+          </AdminRoute>
+          } />
+
           <Route path={calendarURL} element={
           <PrivateRoute>
             <Calendario />
