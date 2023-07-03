@@ -25,7 +25,7 @@ const customStyles = {
 };
 
 export const Tour = () => {
-  const weekdays = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes"];
+  // const weekdays = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes"];
 
   const [average, setAverage] = useState(0);
   const [tour, setTour] = useState<ITour | null>(null);
