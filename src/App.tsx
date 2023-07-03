@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Landing from "./views/Landing";
 import { Login } from "./views/Login";
-import { dashboardURL, homeURL, loginURL, profileURL, registerURL, tourURL, userReservesURL } from "./constants/urls";
+import { calendarURL, dashboardURL, homeURL, loginURL, profileURL, registerURL, tourURL, userReservesURL } from "./constants/urls";
 import { Register } from "./views/Register";
 import { Tour } from "./views/Tour";
 import Modal from 'react-modal';
@@ -10,6 +10,7 @@ import { Dashboard } from "./views/Dashboard";
 import { Profile } from "./views/Profile";
 import { PrivateRoute } from "./components/PrivateRoute";
 import { UserReserves }  from "./views/UserReserves";
+import { Calendario } from "./components/Calendario";
 
 Modal.setAppElement('#root');
 
@@ -42,6 +43,12 @@ export const App = () => {
           <Route path={userReservesURL} element={
           <PrivateRoute>
             <UserReserves />
+          </PrivateRoute>
+          } />
+
+          <Route path={calendarURL} element={
+          <PrivateRoute>
+            <Calendario />
           </PrivateRoute>
           } />
         </Route>

@@ -4,12 +4,14 @@ import { homeURL,
     profileURL,
     dashboardURL, 
     userReservesURL,
+    calendarURL,
 } from "../constants/urls";
 
 import { logout } from "../firebase/auth-service";
 import { UserContext, useUser } from "../contexts/UserContext";
 import { getProfilePicture } from "../firebase/users-service";
 import defaultIcon from "../assets/userIcon.png"
+import Calendar from "react-calendar";
 
 export function Navbar() {
   const navigate = useNavigate();
@@ -94,6 +96,13 @@ export function Navbar() {
                   <span>Reservaciones</span>
                 </Link>
               </li>
+
+              <li className="mb-4 rounded-md hover:scale-105">
+                <Link to={calendarURL}>
+                  <span>Calendario</span>
+                </Link>
+              </li>
+
               <li className="rounded-md hover:scale-105">
                 <button
                   type="button"

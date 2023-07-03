@@ -8,3 +8,4 @@ export const userReservesURL: string = "/reserves";
 export const adminURL: string = "/admin";
 export const tourURL: string = "/tour/:id";
 export const toursURL: string = "/tours";
+export const calendarURL: string = "/calendario";
