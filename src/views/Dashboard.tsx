@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 export const Dashboard = () => {
 
-  const [isLoading, setLoading] = useState(false);
+  const [isLoading] = useState(false);
   useEffect(() => {
       console.log(toursInfo)
 

@@ -7,8 +7,9 @@ import { calculateStars } from "../constants/tools";
 import { FaHome } from "react-icons/fa";
 import Modal from 'react-modal';
 import { ReserveModal } from "../components/ReserveModal";
+import { IFeedback } from "../models/IFeedback";
 
-const FeedbackCard = ({ feedback }) => {
+const FeedbackCard = ({ feedback }: any) => {
   return (
     <div className="flex items-center">
       <div className="w-10 h-10 bg-gray-200 rounded-full flex-shrink-0"></div>
@@ -39,7 +40,7 @@ const customStyles = {
 };
 
 export const Tour = () => {
-  const weekdays = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes"];
+  // const weekdays = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes"];
 
   const [average, setAverage] = useState(0);
   const [tour, setTour] = useState<ITour | null>(null);
@@ -72,7 +73,7 @@ export const Tour = () => {
     if (isLogin) {
       openModal()
     }
-    navigate(`/reserve/${tour?.id}`)
+    // navigate(`/reserve/${tour?.id}`)
   }
 
   const handleBackHome = () => {
@@ -157,7 +158,7 @@ export const Tour = () => {
         >
           Feedbacks
         </h1>
-        {tour?.feedbacks.map((feedback) => {
+        {tour?.feedbacks.map((feedback: IFeedback) => {
           return (
             <div key={feedback.id}>
               <FeedbackCard feedback={feedback} />

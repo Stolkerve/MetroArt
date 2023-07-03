@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 
 export const FeedbackCard = () => {
   return (<div className="contenedor">

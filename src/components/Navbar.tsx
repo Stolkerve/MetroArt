@@ -4,6 +4,7 @@ import { homeURL,
     profileURL,
     dashboardURL, 
     userReservesURL,
+    adminURL,
 } from "../constants/urls";
 
 import { logout } from "../firebase/auth-service";
@@ -89,11 +90,21 @@ export function Navbar() {
                   <span>Tours</span>
                 </Link>
               </li> */}
-              <li className="mb-4 rounded-md hover:scale-105">
+              <li className="rounded-md hover:scale-105">
                 <Link to={userReservesURL}>
                   <span>Reservaciones</span>
                 </Link>
               </li>
+              {user.role == "admin" ? (
+                <li className="mb-4 rounded-md hover:scale-105">
+                  <Link to={adminURL}>
+                    <span>Admin</span>
+                  </Link>
+                  </li>
+              ): (
+                <></>
+              )}
+              
               <li className="rounded-md hover:scale-105">
                 <button
                   type="button"

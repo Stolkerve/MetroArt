@@ -4,4 +4,5 @@ export interface User {
     email: string;
     phone: string;
     favorites?: string[];
+    role?: string;
   }

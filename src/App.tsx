@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Landing from "./views/Landing";
 import { Login } from "./views/Login";
-import { dashboardURL, homeURL, loginURL, profileURL, registerURL, tourURL, userReservesURL } from "./constants/urls";
+import { adminURL, dashboardURL, homeURL, loginURL, profileURL, registerURL, tourURL, userReservesURL } from "./constants/urls";
 import { Register } from "./views/Register";
 import { Tour } from "./views/Tour";
 import Modal from 'react-modal';
@@ -10,6 +10,8 @@ import { Dashboard } from "./views/Dashboard";
 import { Profile } from "./views/Profile";
 import { PrivateRoute } from "./components/PrivateRoute";
 import { UserReserves }  from "./views/UserReserves";
+import { AdminRoute } from "./components/AdminRoute";
+import { Admin } from "./views/Admin";
 
 Modal.setAppElement('#root');
 
@@ -43,6 +45,11 @@ export const App = () => {
           <PrivateRoute>
             <UserReserves />
           </PrivateRoute>
+          } />
+          <Route path={adminURL} element={
+          <AdminRoute>
+            <Admin />
+          </AdminRoute>
           } />
         </Route>
       </Routes>

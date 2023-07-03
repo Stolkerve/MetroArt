@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const Feedback = ({ onSubmit }) => {
+export const Feedback = ({ onSubmit }: any) => {
   const [feedback, setFeedback] = useState('');
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: any) => {
     event.preventDefault();
     onSubmit(feedback);
     setFeedback('');
   };
 
-  const handleChange = (event) => {
+  const handleChange = (event: any) => {
     setFeedback(event.target.value);
   };
 
@@ -32,5 +32,3 @@ const Feedback = ({ onSubmit }) => {
 Feedback.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };
-
-export default Feedback;
