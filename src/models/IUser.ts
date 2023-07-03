@@ -5,4 +5,5 @@ export interface User {
     phone: string;
     favorites?: string[];
     role?: string;
+    name?: string;
   }

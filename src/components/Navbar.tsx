@@ -19,14 +19,14 @@ export function Navbar() {
 
 
   const displayName = (userName: string) => {
-    if (user.username.includes(" ")) {
+    if (userName.includes(" ")) {
       userName = userName.split(" ")[0].charAt(0).toUpperCase() + userName.split(" ")[0].slice(1);
       return userName;
     } else {
       userName = userName.charAt(0).toUpperCase() + userName.slice(1);
       return userName;
     }
-    
+
   }
 
   const handleLogout = async () => {
@@ -96,7 +96,7 @@ export function Navbar() {
                 </Link>
               </li>
               {user.role == "admin" ? (
-                <li className="mb-4 rounded-md hover:scale-105">
+                <li className=" mb-4 rounded-md hover:scale-105">
                   <Link to={adminURL}>
                     <span>Admin</span>
                   </Link>
@@ -105,7 +105,7 @@ export function Navbar() {
                 <></>
               )}
               
-              <li className="rounded-md hover:scale-105">
+              <li className="mt-2 rounded-md hover:scale-105">
                 <button
                   type="button"
                   className="rounded-xl text-[#F77F00] w-28 bg-white p-2"

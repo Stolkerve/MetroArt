@@ -28,7 +28,6 @@ export function Register() {
       return;
     }
 
-    console.log(email, password, username, phone);
     try {
       await emailPasswordRegister(email, password, username, phone)
       navigate(dashboardURL)

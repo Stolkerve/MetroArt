@@ -12,7 +12,12 @@ export interface UserContext extends ReturnType<typeof useUser> {
 }
 
 export function UserContextProvider({ children }: any) {
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<User>({
+    id: "",
+    username: "",
+    email: "",
+    phone: "",
+  });
   const [isLoadingUser, setIsLoadingUser] = useState(true);
 
   useEffect(() => {
@@ -21,8 +26,20 @@ export function UserContextProvider({ children }: any) {
       if (firebaseUser && !user) {
         const userProfile: any = await getUserProfile(firebaseUser.email!);
         setUser(userProfile);
-      } else {
-        setUser(null);
+      } else {  
+        if (auth.currentUser) {
+          const userProfile: any = await getUserProfile(auth.currentUser.email!); 
+          setUser(userProfile);
+        } else {
+          setUser({
+            id: "",
+            username: "admin",
+            email: "",
+            phone: "",
+          });
+        }
+             
+        
       }
 
       setIsLoadingUser(false);

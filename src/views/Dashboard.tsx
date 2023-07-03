@@ -16,7 +16,6 @@ export const Dashboard = () => {
   
   return (
 
-  
     <div className="flex my-4 justify-center items-center flex-col min-h-screen min-w-screen">
         <div className="flex flex-row min-w-screen w-full justify-center m-4">
             <input 

@@ -15,12 +15,9 @@ export function Login() {
 
   const onSubmit: SubmitHandler<ILoginForm> = async ({ email, password }) => {
     setLoading(true);
-    console.log(email, password);
     try {
       emailPasswordLogin(email, password)
-      console.log("exito")
       navigate(dashboardURL);
-      console.log("tamo en dashboard");
     } catch (e: any) {
       setLoading(false);
       setErrMsg("Ocurrio un error...");
