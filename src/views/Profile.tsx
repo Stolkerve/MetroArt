@@ -77,7 +77,7 @@ export function Profile() {
     }, [])
 
     useEffect(() => {
-      console.log("epale")
+      console.log("")
     }, [profilePicture])
       
 

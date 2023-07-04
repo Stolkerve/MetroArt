@@ -1,5 +1,7 @@
 import { Fade, Zoom } from "react-awesome-reveal";
 import campusBackground from "../assets/campus.jpg";
+import unimetPic from "../assets/unimetvert.jpg";
+import unimet from "../assets/unimet.jpg";
 import { useState } from "react";
 import { LineWave } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom";
@@ -91,13 +93,13 @@ export default function Landing() {
             <div className="flex justify-center items-center px-10 space-x-4">
               <img
                 className="rounded-2xl max-w-sm h-[38rem]"
-                src={campusBackground}
+                src={unimetPic}
                 style={{ boxShadow: "0px 6px 0px 6px #1D3557" }}
               />
               <div className="space-y-4">
                 <img
-                  className="rounded-2xl max-w-xs"
-                  src={campusBackground}
+                  className="rounded-2xl w-[500px] max-w-xs"
+                  src={unimet}
                   style={{ boxShadow: "8px 8px 0px 0px #1D3557" }}
                 />
                 <img
